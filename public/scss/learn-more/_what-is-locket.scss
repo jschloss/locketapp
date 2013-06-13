@@ -1,0 +1,144 @@
+#learn-more {
+   position: absolute;
+   width: 50px;
+   height: 50px;
+   left: 50%;
+   margin-left: -25px;
+   top: -50px;
+   background: #131513;
+
+}
+
+section#what-is-locket {
+   margin-bottom: -1px; // Fixes a weird iOS bug
+   position: relative;
+   background: -moz-linear-gradient(top,  rgba(255,255,255,0.9) 0%, rgba(255,255,255,1) 38%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.9)), color-stop(38%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+   background: -webkit-linear-gradient(top,  rgba(255,255,255,0.9) 0%,rgba(255,255,255,1) 38%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+   background: -o-linear-gradient(top,  rgba(255,255,255,0.9) 0%,rgba(255,255,255,1) 38%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+   background: -ms-linear-gradient(top,  rgba(255,255,255,0.9) 0%,rgba(255,255,255,1) 38%,rgba(255,255,255,1) 100%); /* IE10+ */
+   background: linear-gradient(to bottom,  rgba(255,255,255,0.9) 0%,rgba(255,255,255,1) 38%,rgba(255,255,255,1) 100%); /* W3C */
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6131513', endColorstr='#131513',GradientType=0 ); /* IE6-9 */
+   @include mobile { 
+    margin-top: 0 !important; // override javascript inline styling on mobile
+    padding-bottom: 7em;
+
+    } 
+
+
+   p {
+      padding: 1em 6.5em;
+
+      @include tablet { padding: .75em 4.5em; }
+      @include mobile { padding: 0; margin-top: 280px;  }
+   }
+
+   a { 
+      color: white;
+      border-bottom: 1px solid rgba(255,255,255,.3);
+   }
+
+	svg {
+		float: left;
+		@include transition(all, .2s, 1s);
+      @include tablet { @include scale(.8);  }
+      @include mobile { @include scale(.65); @include transform-origin(left,top); position: absolute; top: 100px; }
+
+		&#btle-computer { 
+         width: 436px;
+         height: 260px;
+         margin-left: 5.4em;
+         @include tablet { margin-left: 1.2em }
+         @include mobile { margin: 0; left: 10%; }
+      }
+		&#btle-phone { 
+         float: right;
+         width: 84px;
+         height: 257px;
+         margin-right: 9.8em;
+         @include tablet { margin-right: 5.2em }
+         @include mobile { margin: 0; right: 10%; }
+      }
+	}
+
+   #iphone-tap {
+      @include opacity(0);
+   }
+
+   #screen-on { @include opacity(0); @include transition(all, .5s); @include transition-delay(1s); }
+
+}
+
+section#what-is-locket.play {
+
+
+
+
+	#iphone-tap {
+      
+		-webkit-animation: double-tap-wave .6s 0s ease-out 2 forwards;
+         -moz-animation: double-tap-wave .6s 0s linear 1 forwards;
+          -ms-animation: double-tap-wave .6s 0s linear 1 forwards;
+           -o-animation: double-tap-wave .6s 0s linear 1 forwards;
+              animation: double-tap-wave .6s 0s linear 1 forwards;
+		
+	}
+
+   #screen-on { @include opacity(1) }
+}
+
+
+// Make the waves come out when we tap the iphone
+
+@-webkit-keyframes double-tap-wave {
+   0% {
+      @include opacity(1);
+
+      
+   }  
+
+   100% {
+       font-size: 40px;
+       @include opacity(0);
+   }
+
+}
+
+@-moz-keyframes double-tap-wave {
+   0% {
+      @include opacity(1);
+
+      
+   }  
+
+   100% {
+       font-size: 40px;
+       @include opacity(0);
+   }
+}
+
+@-o-keyframes double-tap-wave {
+   0% {
+      @include opacity(1);
+
+      
+   }  
+
+   100% {
+       font-size: 40px;
+       @include opacity(0);
+   }
+}
+
+@keyframes double-tap-wave {
+   0% {
+      @include opacity(1);
+
+      
+   }  
+
+   100% {
+       font-size: 40px;
+       @include opacity(0);
+   }
+}

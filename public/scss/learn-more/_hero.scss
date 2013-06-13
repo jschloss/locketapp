@@ -1,0 +1,95 @@
+.folded {
+	@include transition(height, 1s);
+
+}
+
+#video-viewport {
+    position: fixed;
+    top: 0;
+    overflow: hidden;	
+    z-index: 1; /* for accessing the video by click */
+    @include mobile { display: none; }
+
+    video {
+		position: absolute;
+		top: 0;
+		z-index: 1;
+	}
+
+}
+section#above-the-fold { 
+	
+	@include box-sizing(border-box);
+	background: none;
+	overflow: hidden;
+	color: white;
+	position: fixed;
+
+	@include mobile { position: relative; min-height: 600px; background: url(../img/iphone-bg.jpg) bottom center no-repeat; }
+
+	
+
+	&.play {
+
+		svg { @include opacity(.4); }
+	}
+
+	.wrapper { 
+		max-width: none; 
+		position: absolute;
+		left: 0;
+		right: 0;	
+	}
+
+	header { 
+		
+	}
+}
+
+section#above-the-fold.thanks {
+
+	
+}
+
+
+div.hero {
+	width: 100%;
+	height: 100%;
+	float: left;
+	z-index: 1;
+	font-size: 17px;
+	position: relative;
+	@include short  { font-size: 14px; width: 77%; float: none; margin: 0 auto; }
+	@include tablet { font-size: 15px; }
+	@include mobile { font-size: 12.5px; }
+	
+	h1, h2 {
+		top: 50%;
+		position: absolute;
+		width: 100%;
+		@include transition(all,.5s);
+		@include tablet { bottom: 300px; }
+		@include mobile { bottom: 140px; }
+		
+	}
+	h1 {
+		text-align: center;
+		margin-top: -220px;
+		font-weight: 100;
+		
+		font-size: 3em;
+		@include short  { margin-top: -170px; }
+	}
+
+	h2 {
+		font-size: 1.22em;
+		margin-top: -140px;
+		text-align: center;
+		font-weight: 100;
+		@include opacity(.75);
+		@include short  { margin-top: -100px; }
+	}
+
+
+	
+}

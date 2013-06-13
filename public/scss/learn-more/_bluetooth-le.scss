@@ -1,0 +1,241 @@
+section#bluetooth-le {
+
+	padding-top: 0;
+
+	h1 { padding-top: 1em; margin-bottom: 2em; @include mobile { margin-bottom: 1em }}
+	
+	p { 
+		margin-bottom: 2em;
+		@include box-sizing(border-box); 
+		padding-left: 0; 
+		padding-right: 5.2em; 
+		margin-top: 0;
+		@include tablet{ padding-right: 2em; }
+		@include mobile { padding: 0 }
+	}
+
+	h4 { 
+		text-align: left; 
+		font-size: .7em; 
+		font-weight: 500;
+	}
+
+	ul {
+		@include background-image-retina('../img/learn-more/supported-devices-bg','gif',95px,520px);
+		float: left;
+		width: 280px;
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		@include box-sizing(border-box);
+		@include tablet { width: 220px; background-size: 70px;}
+		@include mobile { width: 100%; margin-bottom: 4em }
+
+		li {
+			position: relative;
+			color: #333;
+			text-align: left;
+			@include box-sizing(border-box);
+			border-top: 1px solid $color-1;
+			padding: 0 .5em 0 130px;
+			display: table;
+			width: 100%;
+			height: 80px;
+			@include tablet { height: 59px; padding-left: 99px;}
+			@include mobile { padding-left: 40%; }
+			
+			i {
+				position: absolute;
+				top: 50%;
+				left: 5.5em;
+				margin-top: -8px;
+				font-size: 18px;
+				color: #4ece91;
+				@include tablet { left: 4.8em; font-size: 15px;}
+				@include mobile { left: 6.8em; }
+			}
+
+			h5 { 
+				display: table-cell; 
+				vertical-align: middle; 
+				margin: 0; 
+				line-height: 1em;
+				font-weight: 100;
+				font-size: .9em;
+			}
+
+			&.coming-soon, &.coming-soon i { color: $color-1; }
+			&.coming-soon i { margin-top: -10px;}
+		}
+	}
+	div#iphone-screenshot {
+		position: relative;
+
+		img { 
+			width: 100%;
+
+			&#battery-zoom {
+				position: absolute;
+				top:5%;
+				right:-5.2%;
+				width: 40%;
+				z-index:2;
+				transform: translateZ(0);
+				@include scale(0.2);
+				@include opacity(0);
+				@include transition(all, .5s);
+				@include transition-timing-function(cubic-bezier(0.250, 0.250, 0.160, 1.530));
+			}
+		}
+
+		#bluetooth-logo {
+			width: 5.4%;
+			height: 4%;
+			position: absolute;
+			top: 12.5%;
+			right: 20.5%;
+			z-index: 3;
+			transform: translateZ(0);
+			@include opacity(0);
+		}
+
+	
+		
+
+	}
+}
+
+section#bluetooth-le.play {
+
+	#lock-screen {
+		@include scale(.6);
+		@include opacity(0);
+	}
+
+	#battery-zoom {
+		-webkit-animation: bounceIn .5s 0s ease-out 1 forwards;
+	       -moz-animation: bounceIn .5s 0s ease-out 1 forwards;
+	        -ms-animation: bounceIn .5s 0s ease-out 1 forwards;
+	         -o-animation: bounceIn .5s 0s ease-out 1 forwards;
+	            animation: bounceIn .5s 0s ease-out 1 forwards;
+	}
+
+	#bluetooth-logo {
+		-webkit-animation: bluetooth-on .75s .575s ease-out 1 forwards;
+		       -moz-animation: bluetooth-on .75s .575s ease-out 1 forwards;
+		        -ms-animation: bluetooth-on .75s .575s ease-out 1 forwards;
+		         -o-animation: bluetooth-on .75s .575s ease-out 1 forwards;
+		            animation: bluetooth-on .75s .575s ease-out 1 forwards;
+	}
+}
+
+
+
+
+@-webkit-keyframes bluetooth-on {
+	0% {
+		opacity: 0;
+		
+	}	
+	20% {
+		opacity: .75;
+
+	}
+	
+	40% {
+		opacity: 0;
+	}
+
+	60% {
+		opacity: .75;
+	}
+
+	80% {
+		opacity: 0;
+	}
+	
+	100% {
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes bluetooth-on {
+	0% {
+		opacity: 0;
+		
+	}	
+	20% {
+		opacity: .75;
+
+	}
+	
+	40% {
+		opacity: 0;
+	}
+
+	60% {
+		opacity: .75;
+	}
+
+	80% {
+		opacity: 0;
+	}
+	
+	100% {
+		opacity: 1;
+	}
+}
+
+@-o-keyframes bluetooth-on {
+	0% {
+		opacity: 0;
+		
+	}	
+	20% {
+		opacity: .75;
+
+	}
+	
+	40% {
+		opacity: 0;
+	}
+
+	60% {
+		opacity: .75;
+	}
+
+	80% {
+		opacity: 0;
+	}
+	
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes bluetooth-on {
+	0% {
+		opacity: 0;
+		
+	}	
+	20% {
+		opacity: .75;
+
+	}
+	
+	40% {
+		opacity: 0;
+	}
+
+	60% {
+		opacity: .75;
+	}
+
+	80% {
+		opacity: 0;
+	}
+	
+	100% {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,70 @@
+@import "lib/variables";
+@import "lib/media-queries";
+
+section.boilerplate {
+	padding-top: 0;
+
+	a { color: $color-2; }
+	h1 { 
+		border-top: 1px solid #ccc;
+		padding-top: 1em;
+		margin-top: 0;
+		float: left;
+		clear: both;
+		width: 100%;
+		&:first-child {
+			margin-top: 100px;
+			border-top: none;
+		}
+	}
+
+	ol {
+		float: left;
+		width: 100%;
+		margin: 0 0 2em;
+		padding: 0;
+		list-style-type: none;
+
+		li { 
+			float: left; margin: 0; padding: 0 2em .5em 0;
+			box-sizing: border-box;
+
+			h2 { 
+				font-size: 1.2em;
+			}
+
+			
+
+		}
+	}
+
+	p {
+		font-size: 1.05em;
+		line-height: 2em;
+		float: left;
+	}
+
+}
+
+
+#legal {
+	p { font-size: 1.2em; padding: 0 0 .5em 0; @include mobile { padding: 0 0 .5em }}
+	p.large { font-size: 1.35em; padding-right: 2%;  @include mobile { padding: 0 0 1em }}
+	p.footnote { font-size: .8em; }
+}
+
+#press {
+	img { max-width: 50%;}
+	.logo-wrap, .img-wrap { padding: 4em; text-align: center; background: #f8f8f8; }
+	.logo-wrap.dark { background: #131513; color: rgba(255,255,255,.6) }
+	.logo-wrap img { width: 55px; }
+	#app-in-hand {
+		background: url('../../press/iphone-app-in-hand.jpg') center center no-repeat;
+		background-size:820px;
+		text-align: center;
+		height: 523px;
+
+		ul{ margin-top: 380px; }
+	}
+	ul { list-style-type: none; margin: 0; padding: 2em 0 2em}
+}

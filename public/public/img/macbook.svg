@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="694.444px" height="332.771px" viewBox="0 0 694.444 332.771" enable-background="new 0 0 694.444 332.771"
+	 xml:space="preserve">
+<g>
+	<path fill="none" stroke="#B7BCB9" stroke-width="3" d="M589.888,15.58C589.888,6.988,582.9,0,574.31,0H132.56
+		c-8.59,0-15.579,6.988-15.579,15.58v294.576c0,0.019,0.009,5.181,0.004,5.181l472.907-0.304c-0.01,0-0.003-4.721-0.003-4.877V15.58
+		z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#B7BCB9" stroke-width="3" d="M133.195,20.035h440.482v275.267
+		H133.195V20.035z"/>
+	<path fill="none" stroke="#B7BCB9" stroke-width="3" d="M352.038,315.336h-0.966h-38.161c0,1.988,2.114,6.423,6.396,6.423
+		c3.812,0,26.751,0,31.764,0c0.62,0,0.966,0,0.966,0c5.389,0,31.686,0,35.524,0c4.282,0,6.4-4.435,6.4-6.423H352.038z"/>
+	<g>
+		<defs>
+			<path id="SVGID_1_" d="M351.014,11.018c0,1.336,1.08,2.421,2.416,2.421c1.345,0,2.428-1.085,2.428-2.421
+				c0-1.332-1.083-2.418-2.428-2.418C352.094,8.6,351.014,9.686,351.014,11.018"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		
+			<rect x="351.014" y="8.6" clip-path="url(#SVGID_2_)" fill="none" stroke="#B7BCB9" stroke-width="3" width="4.844" height="4.839"/>
+		<use xlink:href="#SVGID_1_"  overflow="visible" fill="none" stroke="#B7BCB9" stroke-width="3"/>
+	</g>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#B7BCB9" stroke-width="3" d="M63.324,315.948l0.611-0.612h579
+		l0.612,0.612v9.174c0,0-6.763,4.615-12.541,5.812c-5.778,1.199-9.802,1.836-13.152,1.836c-3.35,0-529.756,0-529.756,0
+		s-8.93-0.923-10.093-1.224c-1.163-0.3-7.384-2.203-9.177-3.059c-1.791-0.854-5.505-3.059-5.505-3.059V315.948z"/>
+</g>
+</svg>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="619px" height="360px" viewBox="0 0 619 360" enable-background="new 0 0 619 360" xml:space="preserve">
+<g>
+	<path fill="none" stroke="#B7BCB9" stroke-width="3" d="M556.15,22.052c0-8.976-7.301-16.278-16.276-16.278H78.329
+		c-8.976,0-16.277,7.302-16.277,16.278v307.776c0,0.019,0.009,5.413,0.005,5.413l494.098-0.317c-0.011,0-0.004-4.932-0.004-5.095
+		V22.052z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#B7BCB9" stroke-width="3" d="M78.993,26.708h460.22v287.601
+		H78.993V26.708z"/>
+	<path fill="none" stroke="#B7BCB9" stroke-width="3" d="M307.642,335.241h-1.01h-39.871c0,2.078,2.209,6.71,6.683,6.71
+		c3.982,0,27.95,0,33.188,0c0.647,0,1.01,0,1.01,0c5.63,0,33.106,0,37.116,0c4.474,0,6.687-4.633,6.687-6.71H307.642z"/>
+	<g>
+		<defs>
+			<path id="SVGID_1_" d="M306.573,17.286c0,1.396,1.128,2.53,2.523,2.53c1.406,0,2.537-1.134,2.537-2.53
+				c0-1.391-1.131-2.526-2.537-2.526C307.701,14.759,306.573,15.895,306.573,17.286"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		
+			<rect x="306.573" y="14.759" clip-path="url(#SVGID_2_)" fill="none" stroke="#B7BCB9" stroke-width="3" width="5.061" height="5.056"/>
+		<use xlink:href="#SVGID_1_"  overflow="visible" fill="none" stroke="#B7BCB9" stroke-width="3"/>
+	</g>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#B7BCB9" stroke-width="3" d="M5.991,335.88l0.639-0.64h604.946
+		l0.639,0.64v9.585c0,0-7.066,4.822-13.103,6.073c-6.037,1.253-10.241,1.918-13.741,1.918s-553.495,0-553.495,0
+		s-9.331-0.964-10.546-1.278c-1.215-0.313-7.715-2.302-9.588-3.196c-1.871-0.893-5.751-3.196-5.751-3.196V335.88z"/>
+</g>
+</svg>

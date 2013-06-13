@@ -1,0 +1,94 @@
+.popover#thanks-for-downloading {
+			width: 350px;
+			height: 338px;
+			right: 0;
+			top: 64px;
+			color: $body;
+			padding-top: 2em;
+			display: none;
+			text-align: center;
+
+			h3 {
+				text-transform: none;
+				letter-spacing: 0;
+				margin: 0;
+				font-size: 1.7em;
+				font-weight: 500;
+			}
+
+			a { color: $color-2 }
+
+			#thanks-animation-wrapper { 
+				overflow: hidden; 
+				position: absolute; 
+				left: 0; 
+				right: 0; 
+				top: 75px; 
+				bottom: 0; 
+			}
+			
+
+
+			div#thanks-mac { 
+				width: 307px;
+				height: 182px; 
+				margin-left: 21px;
+				margin-top: 30px;
+				display: table;
+				@include background-image-retina('../img/thanks-mac','jpg',307px,182px); 
+
+
+				i { 
+					display: table-cell;
+					vertical-align: middle;
+					color: white;
+					font-size: 50px;
+					padding-bottom: 18px;
+					padding-left: 3px;
+					@include opacity(0);
+				-webkit-animation: bounceIn .5s .75s ease-out 1 forwards;
+			       -moz-animation: bounceIn .5s 0s ease-out 1 forwards;
+			        -ms-animation: bounceIn .5s 0s ease-out 1 forwards;
+			         -o-animation: bounceIn .5s 0s ease-out 1 forwards;
+			            animation: bounceIn .5s 0s ease-out 1 forwards;	
+				}
+
+			}
+
+			div#thanks-iphone {
+				width: 80px;
+				height: 180px;
+				position: absolute;
+				right: -100px;
+				top: 0px;
+				@include scale(0.8);
+				@include background-image-retina('../img/thanks-iphone','jpg',80px,180px); 
+			}
+
+			#thanks-appstore-badge {
+				margin-top: 225px; 
+			}
+
+			#thanks-animation-wrapper.show-iphone { // Slide Mac out and slide iPhone in
+				
+				div {
+					-webkit-transform: translate3d(0,0,0);
+					transform: translate3d(0,0,0);
+					@include transition(all, 1400ms);
+					@include transition-timing-function(cubic-bezier(0.675, 0.045, 0.125, 0.910));
+				}
+
+				div#thanks-mac {
+					@include scale(0.65);
+					@include opacity(0.35);
+					margin-left: -120px;
+					margin-top: 5px;
+				}
+
+				div#thanks-iphone {
+					right: 135px;
+					@include scale(1);
+				}
+			}
+			
+		}

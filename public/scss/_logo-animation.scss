@@ -1,0 +1,51 @@
+@-webkit-keyframes pairing {
+   from { background-position:    0px 0px; }
+     to { background-position: 0px -506px; }
+}
+
+@-moz-keyframes pairing {
+   from { background-position:    0px 0px; }
+     to { background-position: 0px -506px; }
+}
+
+@-ms-keyframes pairing {
+   from { background-position:    0px 0px; }
+     to { background-position: 0px -506px; }
+}
+
+@-o-keyframes pairing {
+   from { background-position:    0px 0px; }
+     to { background-position: 0px -506px; }
+}
+
+@keyframes pairing {
+   from { background-position:    0px 0px; }
+     to { background-position: 0px -506px; }
+}
+
+
+
+@-webkit-keyframes spinning {
+  from { background: url('../img/searching.png') 0 0 no-repeat; }
+  to { @include rotate(-360deg);  background: url('../img/searching.png') 0 0 no-repeat; }
+}
+
+@-moz-keyframes spinning {
+  from { background: url('../img/searching.png') 0 0 no-repeat; }
+  to { @include rotate(-360deg);  background: url('../img/searching.png') 0 0 no-repeat; }
+}
+
+@-ms-keyframes spinning {
+  from { background: url('../img/searching.png') 0 0 no-repeat; }
+  to { @include rotate(-360deg);  background: url('../img/searching.png') 0 0 no-repeat; }
+}
+
+@-o-keyframes spinning {
+  from { background: url('../img/searching.png') 0 0 no-repeat; }
+  to { @include rotate(-360deg);  background: url('../img/searching.png') 0 0 no-repeat; }
+}
+
+@keyframes spinning {
+  from { background: url('../img/searching.png') 0 0 no-repeat; }
+  to { @include rotate(-360deg);  background: url('../img/searching.png') 0 0 no-repeat; }
+}

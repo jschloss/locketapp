@@ -1,0 +1,317 @@
+section#just-the-beginning {
+
+	padding-bottom: 12em;
+
+	.half { 
+		@include tablet { width: 100%; }
+	}
+
+	div.left.half { 
+		padding: 1.7em 5.5em 1em 0; 
+		@include tablet { padding: 1em 4em; margin-left: .5em; }; 
+		@include mobile { padding: 0 }
+	}
+
+
+	.right.half { 
+		position: relative; 
+		margin-top: 2.75em;
+		height: 400px;
+		@include tablet { width: 70%; margin-right: 15%;  }
+		@include mobile { width: 100%; margin: 0; height: 450px; }
+
+	}
+	
+	
+	h4 { 
+		width: 35%;
+		position: absolute;
+		left: 50%;
+		top: 129px; @include tablet { top: 136px; }
+		margin-left: -18.2%;
+		strong {
+			font-family: georgia, serif;
+			font-style: italic;
+			font-weight: 100;
+			border-bottom: 2px solid #131513;
+		}
+	}
+	a { font-size: .75em; margin: 1em; }
+
+	#vote {
+
+		display: block;
+
+
+
+		li { 
+			background-color: #fff; 
+			background-position: center; 
+			background-repeat: no-repeat;
+			background-size: 40%;
+			border-right: 1px solid #ddd;
+			border-bottom: 1px solid #ddd;
+			width: 115px; 
+			height: 115px;
+			position: absolute;
+			display: block;
+			@include transition(all, 150ms);
+			transform: translateZ(0);
+			z-index: 1;
+
+			&:hover {
+				@include scale(1.2);
+				box-shadow: 0px 38px 50px 0px rgba(0, 0, 0, .2);
+				z-index: 2;
+			}
+
+			a { 
+				display: block;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+
+			
+
+			.count {
+				display: block;
+				position: absolute;
+				top: -3px;
+				right: 10px;
+				background-color: #131513;
+				color: #131513;
+				padding: 2px 6px 8px;
+				font-family: georgia, serif; 
+				font-weight: 100;
+				overflow: hidden;
+
+
+				&:after {
+					position: absolute;
+					bottom: -1px;
+					left:0;
+					@include inline-block;
+					font-size: 10px;
+					width: 100%;
+					height: 7px;
+					vertical-align: middle;
+					border-style: dashed;
+					border-color: transparent;
+					border-width: 7px;
+					border-bottom-style: solid;
+					border-bottom-color: #fff;
+					content: "";
+				}
+			}
+
+			&.dark {
+				background-color: #131513;
+
+				.count {
+					
+					background: #fff; 
+					color: #fff; 
+
+					&:after {
+					border-bottom-color: #131513;
+					}
+				}
+			}
+
+			&.circle {
+				.count {
+					top: 1px;
+				}
+			}
+		}
+
+		#vote-gmail { 
+			background-image: url('../img/learn-more/future-gmail.jpg');
+			left: 0;
+			background-size: 50%; 
+
+			
+		}
+
+		#vote-lights {
+			background-image: url('../img/learn-more/future-lightswitch.jpg');
+			@include border-radius(150px);
+			left: 50%;
+			top: -15px;
+			margin-left: -57px;
+		}
+
+		#vote-bank {
+			background-image: url('../img/learn-more/future-boa.jpg');
+			background-size: 70%;
+			right: 0;
+		}
+
+		#vote-auto {
+			background-image: url('../img/learn-more/future-audi.jpg');
+			background-size: 70%;
+			right: 0;
+			top: 145px;
+		}
+
+		#vote-bikelock {
+			background-image: url('../img/learn-more/future-bikelock.jpg');
+			@include border-radius(150px);
+			top: 145px;
+			left: -7px;
+			width: 125px;
+			height: 125px;
+		}
+
+		#vote-facebook {
+			background-image: url('../img/learn-more/future-fb.jpg');
+			bottom: 0;
+			left: 0;
+			height: 100px;
+		}
+
+		#vote-ipad {
+			background-image: url('../img/learn-more/future-ipad.jpg');
+			@include border-radius(150px);
+			right: 0;
+			bottom: 0;
+		}
+
+		#vote-other {
+			background-image: url('../img/learn-more/future-suggest.jpg');
+			background-size: 55%;
+			left: 50%;
+			margin-left: -57px;
+			bottom: -15px;
+			height: 135px;
+		}
+
+	}
+}
+
+section#just-the-beginning.play {
+
+	#vote-gmail {
+		-webkit-animation: jump .5s 0s ease-out 1;
+           -moz-animation: jump .5s 0s ease-out 1;
+            -ms-animation: jump .5s 0s ease-out 1;
+             -o-animation: jump .5s 0s ease-out 1;
+                animation: jump .5s 0s ease-out 1;
+    }
+
+    #vote-lights { 
+		-webkit-animation: jump .5s .05s ease-out 1;
+           -moz-animation: jump .5s .05s ease-out 1;
+            -ms-animation: jump .5s .05s ease-out 1;
+             -o-animation: jump .5s .05s ease-out 1;
+                animation: jump .5s .05s ease-out 1;
+    }
+
+    #vote-bank {
+		-webkit-animation: jump .5s .1s ease-out 1;
+           -moz-animation: jump .5s .1s ease-out 1;
+            -ms-animation: jump .5s .1s ease-out 1;
+             -o-animation: jump .5s .1s ease-out 1;
+                animation: jump .5s .1s ease-out 1;
+    }
+
+    #vote-auto {
+		-webkit-animation: jump .5s .15s ease-out 1;
+           -moz-animation: jump .5s .15s ease-out 1;
+            -ms-animation: jump .5s .15s ease-out 1;
+             -o-animation: jump .5s .15s ease-out 1;
+                animation: jump .5s .15s ease-out 1;
+    }
+
+    #vote-ipad {
+		-webkit-animation: jump .5s .2s ease-out 1;
+           -moz-animation: jump .5s .2s ease-out 1;
+            -ms-animation: jump .5s .2s ease-out 1;
+             -o-animation: jump .5s .2s ease-out 1;
+                animation: jump .5s .2s ease-out 1;
+    }
+
+    #vote-other {
+		-webkit-animation: jump .5s .25s ease-out 1;
+           -moz-animation: jump .5s .25s ease-out 1;
+            -ms-animation: jump .5s .25s ease-out 1;
+             -o-animation: jump .5s .25s ease-out 1;
+                animation: jump .5s .25s ease-out 1;
+    }
+
+    #vote-facebook {
+		-webkit-animation: jump .5s .1s ease-out 1;
+           -moz-animation: jump .5s .1s ease-out 1;
+            -ms-animation: jump .5s .1s ease-out 1;
+             -o-animation: jump .5s .1s ease-out 1;
+                animation: jump .5s .1s ease-out 1;
+    }
+    #vote-bikelock {
+		-webkit-animation: jump .5s .05s ease-out 1;
+           -moz-animation: jump .5s .05s ease-out 1;
+            -ms-animation: jump .5s .05s ease-out 1;
+             -o-animation: jump .5s .05s ease-out 1;
+                animation: jump .5s .05s ease-out 1;
+    }
+
+}
+
+@-webkit-keyframes jump {
+   0% {
+      @include scale(1);
+   }  
+
+   50% {
+      @include scale(1.15);
+      box-shadow: 0px 38px 50px 0px rgba(0, 0, 0, .2);
+   }
+
+   100% {
+   	  @include scale(1);
+   }
+
+}
+
+@-moz-keyframes double-tap-wave {
+   0% {
+      @include opacity(.9);
+
+      
+   }  
+
+   100% {
+       font-size: 40px;
+       @include opacity(0);
+   }
+}
+
+@-o-keyframes double-tap-wave {
+   0% {
+      @include opacity(.9);
+
+      
+   }  
+
+   100% {
+       font-size: 40px;
+       @include opacity(0);
+   }
+}
+
+@keyframes double-tap-wave {
+   0% {
+      @include opacity(.9);
+
+      
+   }  
+
+   100% {
+       font-size: 40px;
+       @include opacity(0);
+   }
+}

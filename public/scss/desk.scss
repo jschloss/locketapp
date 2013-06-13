@@ -1,0 +1,359 @@
+@import "compass";
+@import "compass/css3";
+@import "lib/variables";
+@import "lib/mixins";
+@import "lib/media-queries";
+@import "header-footer";
+
+
+@font-face {
+	font-family: 'icons';
+	src:url('../fonts/icons.eot');
+	src:url('../fonts/icons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icons.woff') format('woff'),
+		url('../fonts/icons.ttf') format('truetype'),
+		url('../fonts/icons.svg#keyhole') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	}
+
+
+body {
+	font-family: $font-1;
+	font-size: 15px;
+	font-weight: 100;
+	background: #fff;
+	color: #333;
+
+	@include tablet { font-size: 14px;}
+	@include mobile {  
+		font-size: 20px;
+		min-width: 480px // Mobile safari width fix  
+	}
+
+}
+
+
+
+
+
+a, a:link, a:visited, a:active { 
+	cursor: pointer; 
+	text-decoration: none;
+	color: $body;	
+}
+
+/////////////////////////////////////////////////
+// Grid & typography stuff
+/////////////////////////////////////////////////
+
+div.section {
+	width: 100%;
+	float: left;
+
+	&.dark-background {
+		background: #131513;
+		color: white; 
+	}
+
+	&.grey-background {
+		background: #f2f2f2;
+	}
+}
+
+.wrapper { // Defines the content grid width
+	max-width: 840px;
+	min-width: 360px;
+	padding: 0 40px;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+	min-height: 100%;
+}
+
+.whole { width: 100%;}
+.half { width: 50%; @include box-sizing(border-box); @include mobile { width: 100%; } }
+.quarter { width: 25%; @include box-sizing(border-box); @include mobile { width: 50%; }}
+.left { float: left;}
+.right { float: right;}
+
+section {
+		padding: 2em 0 2em;
+
+		
+		h1 {
+		font-size: 2.75em;
+		font-weight: 100;
+		}
+
+		h2 {
+			font-size: 1.5em;
+			font-weight: 500;
+		}
+
+		h4 {
+		text-transform: uppercase; 
+		letter-spacing: 2px; 
+		font-weight: 500; 
+		font-size: .75em; 
+		}
+
+		p {
+			text-align: left;
+			font-size: 1.35em;
+			line-height: 2.2em;
+			@include opacity(.9);
+		}
+
+		.footnote {
+			font-size: .5em;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-weight: 500;
+			color: $body;
+		}
+
+}
+
+
+/////////////////////////////////////////////////
+// Icons
+/////////////////////////////////////////////////
+
+i { 
+	font-family: icons;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	font-weight: 100;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+/////////////////////////////////////////////////
+// Buttons
+/////////////////////////////////////////////////
+
+.button, a.button, input.button {
+	@include inline-block;
+	@include border-radius(20px, 20px);
+	@include transition(background, .2s);
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-weight: 700;
+	padding: 5px 20px;
+	background: $color-2;
+	border: 2px solid $color-2;
+	border-bottom-color: $color-3;
+	color: white;
+	cursor: pointer;
+	font-size: 1.1em;
+
+	&:hover  {
+		background: $color-3;
+		border-color: $color-3;
+		border-bottom-color: lighten($color-3,20%);
+		text-decoration: none;
+	}
+
+	&:active, &.active {
+		border-bottom-color: $color-3;
+		color: transparentize(white, .3);
+		box-shadow: inset 0px 10px 10px 3px rgba(0, 0, 0, .075);
+	}
+
+	&:active {
+		box-shadow: inset 0px 10px 10px 3px rgba(0, 0, 0, .1);
+	}
+
+
+}
+
+.button.outline, input.button.outline {
+		background: none;
+		border-width: 2px;
+		border-color: transparentize($color-1,.2);
+		color: $color-1;
+
+		&:hover  {
+			background: $color-1;
+			color: white; 
+		}
+
+		&:active, &.active {
+			background: $color-1;
+			color: white;
+		}
+}
+
+.button.primary {
+	padding: 15px 30px;
+	@include border-radius(30px,30px);
+	font-size: .8em;
+	margin: 1em 0;
+	@include inline-block;
+}
+
+
+.wingman {
+	@include inline-block;
+	@include transition(all, .3s);
+	border-bottom: 1px solid rgba(255,255,255,.0);
+	&:hover { border-bottom: 1px solid $body; }
+	margin: 0 10px;
+	font-weight: 700;
+
+}
+
+
+
+/////////////////////////////////////////////////
+// Reusable UI elements
+/////////////////////////////////////////////////
+@mixin popover {
+	background: white;
+	box-shadow:  2px 2px 0px 1px rgba(0, 0, 0, .15);
+	@include box-sizing(border-box);
+	@include border-radius(10px);
+	padding: 6.5em 2em 2em;
+	position: absolute;
+	z-index: 15;
+
+			
+			&:before, &:after {
+				position: absolute;
+				top: -19px;
+				right: 6.6em;
+				@include inline-block;
+				font-size: 10px;
+				width: 0;
+				height: 0;
+				vertical-align: middle;
+				border-style: dashed;
+				border-color: transparent;
+				border-width: 0.95em;
+				border-bottom-width: 1em;
+				border-bottom-style: solid;
+				border-bottom-color: rgba(33,33,33,.2);
+				content: "";
+			}
+			&:after { 
+				margin-right: 3px; 
+				border-bottom-color: white;
+			}
+}
+
+.popover {
+	@include popover;
+}
+
+
+
+
+/////////////////////////////////////////////////
+// OS not supported content
+/////////////////////////////////////////////////
+nav form { 
+			display: none;
+			position: absolute;
+			width: 360px;
+			right: 0;
+			top: 64px;
+
+			@include popover;
+
+
+}
+nav.os-not-supported {
+
+	form#mc-embedded-subscribe-form {
+		
+		padding-top: 7em; 
+		label {
+			position: absolute;
+			top: 15px;
+			left: 2.5em;
+			right: 2.5em;
+			text-transform: none;
+			letter-spacing: 0;
+			font-size: 18px;
+			color: #333;
+		}
+
+		input[type=email] {
+			background: #f8f8f8 url(../img/input-email-bg.png) 8px 5px no-repeat;
+			padding: 2px 15px 4px;
+			border: 0;
+			font-family: $font-1;
+			font-size: 14px;
+			margin-right:-6px;
+			width: 140px;
+			text-indent: 20px;
+			@include border-radius(20px 0 0 20px);
+			@include transition(all,500ms);
+			border: 2px solid rgba(33,33,33,.1);
+			border-bottom-color: #f5f5f5;
+			border-right-color: #f5f5f5;
+			box-shadow: inset -5px 0px 10px 2px rgba(33, 33, 33, .02);
+			&:focus { 
+				@include opacity(1); 
+				outline: none;
+				color: #333;
+				border-top-color: rgba(33,33,33,.2);
+				border-left-color: rgba(33,33,33,.2);
+			}
+			&:before {
+				font-family: "icons";
+				content: "\2709";
+				position: absolute;
+				left: 5px;
+				display: block;
+				width: 20px;
+				height: 20px;
+				background: Red;
+			}
+
+
+		}
+
+		input[type=checkbox] { display: none } //Hide the Mailchimp list group checkboxes 
+
+		input[type=submit] {
+			@include border-radius(0px 20px 20px 0);
+			font-weight: 100;
+			padding-top: 7px;
+			padding-bottom: 6px;
+			vertical-align: top;
+			&.outline {@include opacity(0.5);}
+		}
+	}
+	input[type=submit] {
+
+	position: relative;
+
+		&:after {
+			display:none;
+			width: 140px;
+			font-size: 1em;
+			line-height: 1.1em;
+			text-align: center;
+			letter-spacing: 0;
+			text-transform: none;
+			position: absolute;
+			left: 50%;
+			margin-left: -70px;
+			top: 100%;
+			padding-top: 10px;
+			color: white;
+
+		}
+
+		&:hover:after {
+			display: block;
+		}
+	}
+}
+
+	

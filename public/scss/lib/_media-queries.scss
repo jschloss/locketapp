@@ -1,0 +1,60 @@
+
+$tablet-threshold: 850px;
+$mobile-threshold: 580px;
+$height-threshold: 750px;
+
+
+
+// Viewports with small heights
+@mixin short {
+  @media only screen and (max-height: $height-threshold)  {
+    @content;
+  }
+}
+
+
+@mixin tablet {
+  @media only screen and (max-width : $tablet-threshold) {
+    @content;
+  }
+}
+
+
+@mixin mobile {
+  @media only screen and (max-width: $mobile-threshold) {
+    @content;
+  }
+}
+
+
+
+/* Debug media query flags - Comment these out for production   */
+/*@include tablet {
+  body::before{ 
+    content: "Tablet"; 
+    font-size: 10px; 
+    font-weight: bold; 
+    display: block; 
+    text-align: center; 
+    background: rgba(255,255,0, 0.9);  
+    position: fixed; 
+    bottom: 50px; 
+    left: 0; 
+    right: 80%; 
+    z-index: 99; }
+}
+@include mobile {
+  body::after{ 
+    content: "mobile"; 
+    font-size: 10px; 
+    font-weight: bold; 
+    display: block; 
+    text-align: center; 
+    background: rgba(255,255,0, 0.9);  
+    position: fixed; 
+    bottom: 150px; 
+    left: 0; 
+    right: 80%; 
+    z-index: 99; }
+}
+*/

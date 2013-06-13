@@ -1,0 +1,205 @@
+#keyboard {
+	position: absolute;
+	left: 50%;
+	margin-top: 50px;
+	margin-left: -402px;
+	width: 805px;
+	height: 315px;
+	@include border-radius(10px);
+	padding: 40px 0 0;
+	@include tablet { @include scale(0.75); margin-left: -340px; }
+	@include mobile { @include scale(0.55); margin-left: -290px; }
+	@include transform-origin(20%,0%);
+
+
+background: #c4c4c4; /* Old browsers */
+background: -moz-linear-gradient(top,  #c4c4c4 0%, #f7f7f7 2%, #d3d3d3 13%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c4c4c4), color-stop(2%,#f7f7f7), color-stop(13%,#d3d3d3)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #c4c4c4 0%,#f7f7f7 2%,#d3d3d3 13%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #c4c4c4 0%,#f7f7f7 2%,#d3d3d3 13%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #c4c4c4 0%,#f7f7f7 2%,#d3d3d3 13%); /* IE10+ */
+background: linear-gradient(to bottom,  #c4c4c4 0%,#f7f7f7 2%,#d3d3d3 13%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c4c4c4', endColorstr='#d3d3d3',GradientType=0 ); /* IE6-9 */
+
+
+}
+
+ul {list-style-type: none; width: 784px; margin: 0 auto;}
+li {float: left;}
+
+
+.key{
+	display: block;
+	color: #999;
+	font: bold 9pt "Century Gothic", arial;
+	text-decoration: none;
+	text-align: center;
+	width: 44px;
+	height: 41px;
+	margin: 5px;
+	background: #eff0f2;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border-top: 1px solid #f5f5f5;
+	text-shadow: 0px 1px 0px #f5f5f5;
+	-webkit-box-shadow: 1px 1px 0px 1px #aaa;
+	box-shadow: 1px 1px 0px 1px #aaa;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	}
+
+.key:active, .keydown {
+	color: #888;
+	background: #ebeced;
+	margin: 6px 5px 4px;
+	-webkit-box-shadow: -1px -1px 0px apx #bbb;
+	box-shadow: -1px -1px 0px 1px #bbb;
+}
+	
+.fn span {
+	display: block;
+	margin: 14px 5px 0 0;
+	text-align: right;
+	font: bold 6pt arial;
+	text-transform: uppercase;}
+#esc {
+	margin: 6px 15px 0 0;
+	font-size: 7.5pt;
+	text-transform: lowercase;}
+
+.eject {
+	span { text-align: center; margin: 8px 0 0; }
+	svg { width: 8px; height: 8px;}
+}
+
+#numbers li a span {
+	display: block;}
+	
+#numbers li a b {
+	margin: 3px 0 3px;
+	display: block;}
+
+#numbers li .alt b {display: block;margin: 0 0 3px;}
+
+
+#numbers li #delete span {
+	text-align: right;
+	margin: 23px 10px 0 0;
+	font-size: 7.5pt;
+	text-transform: lowercase;}
+	
+#letters-row1 li a span {
+	display: block;
+	margin: 13px 0 0;
+	text-transform: uppercase;}
+	
+#letters-row1 li #tab span {
+	text-align: left;
+	margin: 23px 0 0 10px;
+	font-size: 7.5pt;
+	text-transform: lowercase;}	
+
+#letters-row1 li .alt b {display: block; margin: 3px 0 0;}
+#letters-row1 li .alt span {margin: 2px 0 0;}
+
+
+#letters-row2 li a span {
+	display: block;
+	margin: 13px 0 0;
+	text-transform: uppercase;}
+
+#letters-row2 li .alt span {margin: 0; text-transform: lowercase;}
+#letters-row2 li .alt b {display: block; margin: 3px 0 0;}
+#letters-row2 li #caps b {
+	display: block;
+	background: #999;
+	width: 4px;
+	height: 4px;
+	border-radius: 10px;
+	margin: 9px 0 0 10px;
+	-webkit-box-shadow: inset 0 1px 0 #666;
+	-moz-box-shadow:inset 0 1px 0 #666;
+	box-shadow:inset 0 1px 0 #666; 
+	@include transition(all, 300ms);
+}
+#letters-row2 li #caps.on b {
+	background: $color-3;
+	-webkit-box-shadow: inset 0 1px 0 darken($color-3,20%);
+	-moz-box-shadow:inset 0 1px 0 darken($color-3,20%);
+	box-shadow:inset 0 1px 0 darken($color-3,20%); 
+
+}
+
+#letters-row2 li #caps span {
+	text-align: left;
+	margin: 10px 0 0 10px;
+	font-size: 7.5pt;}
+#letters-row2 li #enter span {
+	text-align: right;
+	margin: 23px 10px 0 0;
+	font-size: 7.5pt;}
+
+
+#letters-row3 li a span {
+	display: block;
+	margin: 13px 0 0;
+	text-transform: uppercase;}
+#letters-row3 li .shiftleft span {
+	text-align: left;
+	margin: 23px 0 0 10px;
+	font-size: 7.5pt;
+	text-transform: lowercase;}
+#letters-row3 li .shiftright span {
+	text-align: right;
+	margin: 23px 10px 0 0;
+	font-size: 7.5pt;
+	text-transform: lowercase;}
+#letters-row3 li .alt b {display: block;margin: 4px 0 0;}
+#letters-row3 li .alt span {margin: 0;}
+
+	
+#bottomrow li #fn span, #bottomrow li #control span, #bottomrow li #optionleft span, #bottomrow li #commandleft span {
+	display: block;
+	text-align: left;
+	margin: 31px 0 0 8px;
+	font-size: 7.5pt;
+	text-transform: lowercase;}
+
+#bottomrow li #optionright span, #bottomrow li #commandright span {
+	display: block;
+	text-align: right;
+	margin: 31px 8px 0 0;
+	font-size: 7.5pt;
+	text-transform: lowercase;}
+
+#bottomrow ol li #left span, #bottomrow ol li #right span, #bottomrow ol li #up span, #bottomrow ol li #down span {
+	display: block;
+	margin: 9px 0 0;}
+
+.fn {height: 26px; width: 46px;}
+#delete {width: 72px;}
+#tab {width: 72px;}
+#caps {width: 85px;}
+#enter {width: 85px;}
+.shiftleft, .shiftright {width: 112px;}
+#fn, #control, .option, .command, #spacebar {height: 49px;}
+
+#control {width: 56px;}
+.option {width: 46px;}
+.command {width: 67px;}
+#spacebar {width: 226px;}
+
+#left img, #up img, #down img, #right img {border: none;}
+ul ol {list-style-type: none;}
+#down {height: 23px;}
+#up, #left, #right {height: 24px;}
+#left, #right {margin: 30px 5px 5px;}
+#left:active, #right:active {margin: 32px 5px 3px;}
+#up {margin: 5px 5px 1px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;}
+#up:active {margin: 8px 5px -2px;}
+#down {margin: 0 5px 5px; border-top-left-radius: 0px; border-top-right-radius: 0px;}
+#down:Active {margin: 3px 5px 4px;}
