@@ -11,12 +11,12 @@
 	font-family: 'icons';
 	src:url('../fonts/icons.eot');
 	src:url('../fonts/icons.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/icons.woff') format('woff'),
-		url('../fonts/icons.ttf') format('truetype'),
-		url('../fonts/icons.svg#keyhole') format('svg');
+	url('../fonts/icons.woff') format('woff'),
+	url('../fonts/icons.ttf') format('truetype'),
+	url('../fonts/icons.svg#keyhole') format('svg');
 	font-weight: normal;
 	font-style: normal;
-	}
+}
 
 
 body {
@@ -78,41 +78,41 @@ section {
 .right { float: right;}
 
 section {
-		padding: 2em 0 2em;
+	padding: 2em 0 2em;
 
-		
-		h1 {
+
+	h1 {
 		font-size: 2.2em;
 		line-height: 1.3em;
 		font-weight: 100;
-		}
+	}
 
-		h2 {
-			font-size: 1.5em;
-			font-weight: 500;
-		}
+	h2 {
+		font-size: 1.5em;
+		font-weight: 500;
+	}
 
-		h4 {
+	h4 {
 		text-transform: uppercase; 
 		letter-spacing: 2px; 
 		font-weight: 500; 
 		font-size: .75em; 
-		}
+	}
 
-		p {
-			text-align: left;
-			font-size: 1.25em;
-			line-height: 2.2em;
-			@include opacity(.9);
-		}
+	p {
+		text-align: left;
+		font-size: 1.25em;
+		line-height: 2.2em;
+		@include opacity(.9);
+	}
 
-		.footnote {
-			font-size: .5em;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-			font-weight: 500;
-			color: $body;
-		}
+	.footnote {
+		font-size: .5em;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: 500;
+		color: $body;
+	}
 
 }
 
@@ -173,21 +173,21 @@ i {
 }
 
 .button.outline, input.button.outline {
-		background: none;
-		border-width: 2px;
+	background: none;
+	border-width: 2px;
+	border-color: transparentize($color-1,.2);
+	color: $color-1;
+
+	&:hover  {
+		background: $color-1;
 		border-color: transparentize($color-1,.2);
-		color: $color-1;
+		color: white; 
+	}
 
-		&:hover  {
-			background: $color-1;
-			border-color: transparentize($color-1,.2);
-			color: white; 
-		}
-
-		&:active, &.active {
-			background: $color-1;
-			color: white;
-		}
+	&:active, &.active {
+		background: $color-1;
+		color: white;
+	}
 }
 
 .button.primary {
@@ -223,25 +223,25 @@ i {
 	position: absolute;
 	z-index: 15;
 
-			
-			&:before {
-				position: absolute;
-				top: -19px;
-				right: 6.6em;
-				@include inline-block;
-				font-size: 10px;
-				width: 0;
-				height: 0;
-				vertical-align: middle;
-				border-style: dashed;
-				border-color: transparent;
-				border-width: 0.95em;
-				border-bottom-width: 1em;
-				border-bottom-style: solid;
-				border-bottom-color: white;
-				content: "";
-			}
-			
+
+	&:before {
+		position: absolute;
+		top: -19px;
+		right: 6.6em;
+		@include inline-block;
+		font-size: 10px;
+		width: 0;
+		height: 0;
+		vertical-align: middle;
+		border-style: dashed;
+		border-color: transparent;
+		border-width: 0.95em;
+		border-bottom-width: 1em;
+		border-bottom-style: solid;
+		border-bottom-color: white;
+		content: "";
+	}
+
 }
 
 .popover {
@@ -255,55 +255,55 @@ i {
 // OS not supported content
 /////////////////////////////////////////////////
 nav form { 
-			display: none;
-			position: absolute;
-			width: 360px;
-			right: 0;
-			top: 64px;
-			@include popover;
+	display: none;
+	position: absolute;
+	width: 360px;
+	right: 0;
+	top: 64px;
+	@include popover;
 }
 
 form.subscribe-form {
-		
-		padding-top: 7em;
 
-		label {
-			position: absolute;
-			top: 15px;
-			left: 2.5em;
-			right: 2.5em;
-			text-transform: none;
-			letter-spacing: 0;
-			font-size: 18px;
+	padding-top: 7em;
+
+	label {
+		position: absolute;
+		top: 15px;
+		left: 2.5em;
+		right: 2.5em;
+		text-transform: none;
+		letter-spacing: 0;
+		font-size: 18px;
+		color: #333;
+	}
+
+	input[type=email] {
+		background: #f8f8f8 url(../img/input-email-bg.png) 8px 5px no-repeat;
+		padding: 2px 15px 4px;
+		border: 0;
+		font-family: $font-1;
+		font-size: 14px;
+		margin-right:-6px;
+		width: 140px;
+		text-indent: 20px;
+		@include border-radius(20px 0 0 20px);
+		@include transition(all,500ms);
+		border: 2px solid rgba(33,33,33,.1);
+		border-bottom-color: #f5f5f5;
+		border-right-color: #f5f5f5;
+		box-shadow: inset -5px 0px 10px 2px rgba(33, 33, 33, .02);
+		&:focus { 
+			@include opacity(1); 
+			outline: none;
 			color: #333;
+			border-top-color: rgba(33,33,33,.2);
+			border-left-color: rgba(33,33,33,.2);
 		}
 
-		input[type=email] {
-			background: #f8f8f8 url(../img/input-email-bg.png) 8px 5px no-repeat;
-			padding: 2px 15px 4px;
-			border: 0;
-			font-family: $font-1;
-			font-size: 14px;
-			margin-right:-6px;
-			width: 140px;
-			text-indent: 20px;
-			@include border-radius(20px 0 0 20px);
-			@include transition(all,500ms);
-			border: 2px solid rgba(33,33,33,.1);
-			border-bottom-color: #f5f5f5;
-			border-right-color: #f5f5f5;
-			box-shadow: inset -5px 0px 10px 2px rgba(33, 33, 33, .02);
-			&:focus { 
-				@include opacity(1); 
-				outline: none;
-				color: #333;
-				border-top-color: rgba(33,33,33,.2);
-				border-left-color: rgba(33,33,33,.2);
-			}
-			
 
 
-		}
+	}
 
 		input[type=checkbox] { display: none } //Hide the Mailchimp list group checkboxes 
 
@@ -316,6 +316,7 @@ form.subscribe-form {
 			&.outline {@include opacity(0.5);}
 		}
 	}
+	
 	input[type=submit] {
 
 		position: relative;

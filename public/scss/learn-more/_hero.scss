@@ -67,6 +67,7 @@ div.hero {
 		top: 50%;
 		position: absolute;
 		width: 100%;
+		display: none;
 		@include transition(all,.5s);
 		@include tablet { bottom: 300px; }
 		@include mobile { bottom: 140px; }
@@ -77,7 +78,7 @@ div.hero {
 		margin-top: -220px;
 		font-weight: 100;
 		
-		font-size: 3em;
+		font-size: 2em;
 		@include short  { margin-top: -170px; }
 	}
 

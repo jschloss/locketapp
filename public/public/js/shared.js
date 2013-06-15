@@ -74,12 +74,9 @@ $(function()  {
 
 $(function()  { 
     $('.download.available').bind('click', function(e) {
-        $(this).addClass('outline active');
+        $(this).addClass('outline active').removeClass('available');
         $('#thanks-for-downloading').delay(2000).fadeIn(300);
         $('#thanks-animation-wrapper').addClass('play');
-        setTimeout( function() {
-             $('.button.share').removeClass('outline', 300);
-        }, 1000 )
         setTimeout( function() {
             $('#thanks-for-downloading h3').fadeOut(300);           // Fade the title out so we can change its HTML
             $('#thanks-animation-wrapper').addClass('show-iphone'); // Slide the Mac over so we can slide the iPhone in
