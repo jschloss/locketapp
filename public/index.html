@@ -16,6 +16,7 @@
     <script src="public/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <script type="text/javascript" src="//use.typekit.net/zax1cfj.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
 </head>
 <body>
 
@@ -28,7 +29,8 @@
             <div class="button outline share">
                 Share
                 <div class="popover">
-                    <a href="https://twitter.com/share" class="twitter-share-button" data-text="Introducing Locket, automatic sign-in for Mac." data-via="jschloss" data-count="vertical" data-related="locketapp">Tweet</a><div class="fb-like" data-href="http://www.locketapp.com" data-send="false" data-layout="box_count" data-width="450" data-show-faces="false"></div>
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-text="Automatic sign-in for Mac" data-via="locketapp" data-count="vertical" data-related="locketapp">Tweet</a>
+                    <div class="fb-like" data-href="http://www.locketapp.com" data-send="false" data-layout="box_count" data-width="450" data-show-faces="false"></div>
                     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
                     <a href="https://news.ycombinator.com/submit" class="hn-button" data-title="Automatic sign in for Mac" data-url="www.locketapp.com" data-count="vertical">Vote on Hacker News</a>
                     <script type="text/javascript">var HN=[];HN.factory=function(e){return function(){HN.push([e].concat(Array.prototype.slice.call(arguments,0)))};},HN.on=HN.factory("on"),HN.once=HN.factory("once"),HN.off=HN.factory("off"),HN.emit=HN.factory("emit"),HN.load=function(){var e="hn-button.js";if(document.getElementById(e))return;var t=document.createElement("script");t.id=e,t.src="//hn-button.herokuapp.com/hn-button.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)},HN.load();</script>
@@ -36,7 +38,7 @@
             </div>
 
             <a class="button download available">Download</a>
-            <form action="http://locket.us7.list-manage.com/subscribe/post?u=dd3055a8a4737ac6c53bff5b2&amp;id=14bc629373" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate popover" target="_blank" novalidate>
+            <form action="http://locket.us7.list-manage.com/subscribe/post?u=dd3055a8a4737ac6c53bff5b2&amp;id=14bc629373" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate popover subscribe-form" target="_blank" novalidate>
                 <input type="checkbox" value="1" name="group[325][1]" id="subscribe-to-android"><input type="checkbox" value="2" name="group[325][2]" id="subscribe-to-windows">
                 <input type="email" value="" name="EMAIL" class="email outline" id="mce-EMAIL" placeholder="email address" required>
                 <label id="label-for-os-notify"for="mce-EMAIL">Locket for Windows isn't ready yet. Be the first to know when it's here.</label>
@@ -51,8 +53,8 @@
             </nav>   
         </header> 
         <div id="video-viewport" class="playing">
-            <video autoplay preload muted width="1920" height="1080" id="video">
-                <source src="media/locket.mp4"type="video/mp4" />
+            <video autoplay preload muted width="1920" height="1080" id="locket-video">
+                <source src="public/vid/test.mp4"type="video/mp4" />
                 <source src="http://www.quirksmode.org/html5/videos/big_buck_bunny.webm"type="video/webm" />
                 <source src="http://www.quirksmode.org/html5/videos/big_buck_bunny.ogv"type="video/webm" />
             </video> 
@@ -61,11 +63,9 @@
 
             <div class="wrapper">
 
-
-             <div class="hero">
-
-                <h1 id="headline">Help your Mac know who you are.</h1>
-              <h2>Introducing Locket. Secure, automatic sign-in.</h2>
+<h1>Knock to unlock.</h1>
+<h2>With Locket for iPhone.</h2>
+<a id="video-play-trigger" class="icon">&#xe007;</a>
           </div>
       </div>
   </section>
@@ -82,7 +82,46 @@
             <path fill="none" stroke="#777" stroke-width="2" d="M449.045,244.498c-1.092,0-2.801,0-3.342,0H58.782h-1.736V15
             c0-6.628,5.372-12,12-12h368c6.627,0,12,5.372,12,12V244.498z"/>
             <rect x="72.494" y="18.481" fill="none" stroke="#777" stroke-width="2" width="361.014" height="202.684"/>
-            <text transform="matrix(1 0 0 1 231.4092 234.791)"><tspan x="0" y="0" fill="#333" font-family="'MyriadPro-Semibold'" font-size="8.0566">Macbook </tspan><tspan x="33.942" y="0" fill="#333" font-family="'MyriadPro-Regular'" font-size="8.0566">Air</tspan></text>
+            <g enable-background="new    ">
+        <path fill="#333333" d="M236.565,232.575c-0.032-0.7-0.072-1.547-0.064-2.28h-0.024c-0.177,0.661-0.402,1.395-0.645,2.079
+            l-0.789,2.353h-0.766l-0.725-2.32c-0.209-0.693-0.403-1.434-0.548-2.111h-0.016c-0.024,0.709-0.057,1.571-0.097,2.312
+            l-0.121,2.184h-0.926l0.363-5.43h1.305l0.709,2.183c0.193,0.637,0.363,1.281,0.5,1.886h0.024c0.145-0.588,0.331-1.257,0.54-1.894
+            l0.75-2.175h1.289l0.314,5.43h-0.967L236.565,232.575z"/>
+        <path fill="#333333" d="M240.843,234.791l-0.064-0.436h-0.024c-0.242,0.307-0.653,0.524-1.16,0.524
+            c-0.79,0-1.233-0.572-1.233-1.169c0-0.99,0.878-1.49,2.329-1.482v-0.064c0-0.258-0.105-0.685-0.798-0.685
+            c-0.387,0-0.79,0.121-1.056,0.29l-0.193-0.645c0.29-0.177,0.798-0.346,1.418-0.346c1.257,0,1.62,0.797,1.62,1.651v1.418
+            c0,0.354,0.016,0.7,0.056,0.942H240.843z M240.714,232.873c-0.701-0.016-1.37,0.138-1.37,0.733c0,0.387,0.25,0.564,0.564,0.564
+            c0.395,0,0.685-0.258,0.773-0.54c0.024-0.072,0.032-0.153,0.032-0.218V232.873z"/>
+        <path fill="#333333" d="M245.613,234.67c-0.209,0.097-0.621,0.201-1.112,0.201c-1.225,0-2.022-0.781-2.022-1.998
+            c0-1.176,0.806-2.094,2.184-2.094c0.362,0,0.733,0.08,0.959,0.185l-0.178,0.741c-0.161-0.072-0.395-0.152-0.749-0.152
+            c-0.757,0-1.208,0.556-1.2,1.272c0,0.806,0.523,1.265,1.2,1.265c0.347,0,0.588-0.072,0.781-0.152L245.613,234.67z"/>
+        <path fill="#333333" d="M246.313,234.791c0.016-0.266,0.032-0.701,0.032-1.104v-4.617h0.991v2.337h0.016
+            c0.242-0.379,0.669-0.628,1.257-0.628c0.959,0,1.644,0.797,1.636,1.989c0,1.41-0.895,2.111-1.78,2.111
+            c-0.508,0-0.959-0.193-1.241-0.677h-0.016l-0.049,0.588H246.313z M247.337,233.172c0,0.08,0.008,0.161,0.024,0.233
+            c0.105,0.395,0.451,0.692,0.878,0.692c0.62,0,0.999-0.499,0.999-1.289c0-0.692-0.331-1.256-0.991-1.256
+            c-0.403,0-0.766,0.289-0.878,0.725c-0.017,0.072-0.032,0.161-0.032,0.258V233.172z"/>
+        <path fill="#333333" d="M254.789,232.793c0,1.442-1.015,2.087-2.014,2.087c-1.112,0-1.966-0.766-1.966-2.022
+            c0-1.289,0.846-2.078,2.03-2.078C254.008,230.779,254.789,231.601,254.789,232.793z M251.833,232.833
+            c0,0.758,0.371,1.329,0.975,1.329c0.563,0,0.958-0.556,0.958-1.345c0-0.612-0.273-1.313-0.95-1.313
+            C252.114,231.504,251.833,232.181,251.833,232.833z"/>
+        <path fill="#333333" d="M259.333,232.793c0,1.442-1.015,2.087-2.014,2.087c-1.112,0-1.966-0.766-1.966-2.022
+            c0-1.289,0.846-2.078,2.03-2.078C258.552,230.779,259.333,231.601,259.333,232.793z M256.377,232.833
+            c0,0.758,0.37,1.329,0.975,1.329c0.563,0,0.959-0.556,0.959-1.345c0-0.612-0.274-1.313-0.951-1.313
+            C256.658,231.504,256.377,232.181,256.377,232.833z"/>
+        <path fill="#333333" d="M261.138,232.592h0.016c0.097-0.153,0.21-0.322,0.314-0.459l0.95-1.266h1.193l-1.451,1.604l1.66,2.32
+            h-1.217l-1.128-1.732l-0.338,0.395v1.338h-0.991v-5.721h0.991V232.592z"/>
+    </g>
+    <g enable-background="new    ">
+        <path fill="#333333" d="M266.842,233.083l-0.564,1.708h-0.725l1.845-5.43h0.847l1.852,5.43h-0.748l-0.58-1.708H266.842z
+             M268.622,232.535l-0.532-1.562c-0.121-0.355-0.201-0.678-0.281-0.991h-0.016c-0.082,0.322-0.17,0.652-0.275,0.982l-0.531,1.571
+            H268.622z"/>
+        <path fill="#333333" d="M271.635,229.796c0.009,0.241-0.168,0.435-0.451,0.435c-0.249,0-0.426-0.193-0.426-0.435
+            c0-0.25,0.186-0.443,0.443-0.443C271.467,229.353,271.635,229.546,271.635,229.796z M270.846,234.791v-3.899h0.709v3.899H270.846z
+            "/>
+        <path fill="#333333" d="M272.73,232.108c0-0.46-0.008-0.854-0.031-1.217h0.619l0.025,0.766h0.031
+            c0.178-0.524,0.604-0.854,1.08-0.854c0.08,0,0.137,0.008,0.201,0.024v0.669c-0.072-0.017-0.145-0.024-0.242-0.024
+            c-0.499,0-0.854,0.379-0.95,0.91c-0.017,0.097-0.032,0.21-0.032,0.331v2.078h-0.701V232.108z"/>
+    </g>
             <g>
                 <circle fill="none" stroke="#777" stroke-width="2" cx="253.046" cy="10.691" r="2.28"/>
                 <path fill="none" stroke="#777" stroke-width="2" d="M253.046,12.464c-0.979,0-1.774-0.795-1.774-1.773
@@ -180,26 +219,26 @@
     <g>
         <g>
             <g>
-                <path fill="none" stroke="#777" stroke-width="3" d="M119.475,17.126h-3.811v-1.06H97.927v1.06H38.802
+                <path fill="none" stroke="#777" stroke-width="2.5" d="M119.475,17.126h-3.811v-1.06H97.927v1.06H38.802
                 c-8.568,0-15.513,6.927-15.513,15.472v16.916H22.4V60.24h0.889v11.551H22.4v8.252h0.889v11.346H22.4v8.253h0.889v136.354
                 c0,8.544,6.945,15.471,15.513,15.471h80.673c8.568,0,15.515-6.927,15.515-15.471V32.597
                 C134.988,24.052,128.043,17.126,119.475,17.126z"/>
             </g>
         </g>
-        <path fill="none" stroke="#777" stroke-width="3" d="M30.748,46.802h95.892c0.41,0,0.742,0.33,0.742,0.738v169.326
+        <path fill="none" stroke="#777" stroke-width="2.5" d="M30.748,46.802h95.892c0.41,0,0.742,0.33,0.742,0.738v169.326
         c0,0.407-0.332,0.739-0.742,0.739H30.748c-0.41,0-0.741-0.332-0.741-0.739V47.541C30.007,47.133,30.338,46.802,30.748,46.802z"/>
-        <path fill="none" stroke="#777" stroke-width="3" d="M70.613,32.377h16.16c1.03,0,1.865,0.831,1.865,1.856
+        <path fill="none" stroke="#777" stroke-width="2.5" d="M70.613,32.377h16.16c1.03,0,1.865,0.831,1.865,1.856
         c0,1.024-0.835,1.856-1.865,1.856h-16.16c-1.029,0-1.864-0.832-1.864-1.856C68.749,33.208,69.584,32.377,70.613,32.377z"/>
-        <path fill="none" stroke="#777" stroke-width="3" d="M78.694,223.249c5.663,0,10.255,4.571,10.255,10.21
+        <path fill="none" stroke="#777" stroke-width="2.5" d="M78.694,223.249c5.663,0,10.255,4.571,10.255,10.21
         c0,5.641-4.592,10.212-10.255,10.212c-5.664,0-10.255-4.571-10.255-10.212C68.439,227.82,73.03,223.249,78.694,223.249z"/>
     </g>
     <g>
-        <path fill="none" stroke="#777" stroke-width="3" d="M-1021.779-32.619c0-8.591-6.988-15.58-15.579-15.58h-441.75
+        <path fill="none" stroke="#777" stroke-width="2.5" d="M-1021.779-32.619c0-8.591-6.988-15.58-15.579-15.58h-441.75
         c-8.59,0-15.579,6.988-15.579,15.58v294.576c0,0.02,0.009,5.181,0.004,5.181l472.907-0.304c-0.01,0-0.003-4.721-0.003-4.877
         V-32.619z"/>
-        <path fill="none" stroke="#777" stroke-width="3" d="M-1478.472-28.163h440.482v275.268h-440.481L-1478.472-28.163
+        <path fill="none" stroke="#777" stroke-width="2.5" d="M-1478.472-28.163h440.482v275.268h-440.481L-1478.472-28.163
         L-1478.472-28.163z"/>
-        <path fill="none" stroke="#777" stroke-width="3" d="M-1259.629,267.137h-0.966h-38.161c0,1.988,2.114,6.424,6.396,6.424
+        <path fill="none" stroke="#777" stroke-width="2.5" d="M-1259.629,267.137h-0.966h-38.161c0,1.988,2.114,6.424,6.396,6.424
         c3.812,0,26.751,0,31.764,0c0.62,0,0.966,0,0.966,0c5.389,0,31.686,0,35.524,0c4.282,0,6.4-4.436,6.4-6.424H-1259.629z"/>
         <g>
             <g>
@@ -211,19 +250,19 @@
                     <use xlink:href="#SVGID_2_"  overflow="visible"/>
                 </clipPath>
 
-                <rect x="-1260.653" y="-39.599" clip-path="url(#SVGID_3_)" fill="none" stroke="#777" stroke-width="3" width="4.844" height="4.839"/>
+                <rect x="-1260.653" y="-39.599" clip-path="url(#SVGID_3_)" fill="none" stroke="#777" stroke-width="2.5" width="4.844" height="4.839"/>
             </g>
             <g>
-                <path id="SVGID_1_" fill="none" stroke="#777" stroke-width="3" d="M-1260.653-37.181c0,1.336,1.08,2.421,2.416,2.421
+                <path id="SVGID_1_" fill="none" stroke="#777" stroke-width="2.5" d="M-1260.653-37.181c0,1.336,1.08,2.421,2.416,2.421
                 c1.345,0,2.428-1.085,2.428-2.421c0-1.332-1.083-2.418-2.428-2.418C-1259.573-39.599-1260.653-38.512-1260.653-37.181"/>
             </g>
         </g>
-        <path fill="none" stroke="#777" stroke-width="3" d="M-1548.343,267.75l0.611-0.612h579l0.612,0.612v9.174
+        <path fill="none" stroke="#777" stroke-width="2.5" d="M-1548.343,267.75l0.611-0.612h579l0.612,0.612v9.174
         c0,0-6.763,4.615-12.541,5.812c-5.778,1.199-9.802,1.836-13.152,1.836s-529.756,0-529.756,0s-8.93-0.923-10.093-1.224
         s-7.384-2.203-9.177-3.06c-1.791-0.854-5.505-3.059-5.505-3.059v-9.48H-1548.343z"/>
     </g>
     <circle fill="none" stroke="#777" stroke-width="3" cx="79" cy="25.443" r="1.262"/>
-    <circle fill="none" stroke="#777" stroke-width="4" cx="79" cy="125.443" r="1em" id="iphone-tap" animateType="CSS"/>
+    <circle fill="none" stroke="#777" stroke-width="3" cx="79" cy="125.443" r="1em" id="btle-knock" animateType="CSS"/>
 </svg>
 
 </div>
@@ -243,23 +282,23 @@
                 <p>Before unlocking, Locket makes sure your unlock screen isn't being spoofed by a keystroke logger.</p>
             </li>
             <li class="half encrypted-entry">
-                <h3><i>&#xe006;</i>Encrypted Entry</h3>
+                <h3><i>&#xe005;</i>Encrypted Entry</h3>
                 <p>Locket automatically enters your password with military-grade 2048-bit RSA encryption.
                 </li>
                 <li class="half password-backup">
-                    <h3><i>&#xe005;</i>Password Backup</h3>
+                    <h3><i>&#xe006;</i>Password Backup</h3>
                     <p>Lost or stolen iPhone? You can still sign in with your password and easily unpair your Locket.</o>
                     </li>
                 </ul>
 
 
             </section>
-            <section id="bluetooth-le" class=" ">
+            <section id="bluetooth-le" class="grey-background">
                 <div class="wrapper">
                     <h1>Best friends with your battery.</h1>
                     <div class="left half">
                         <p>Locket talks to your Mac with Bluetooth Low Energy, a new technology that draws very little power. You won’t see any impact on your phone’s battery life, even if you use Locket all day, every day.</p>
-                        <h4>Compatible with Bluetooth Low Energy</h4>
+                        <h4>Ready for Locket</h4>
                         <ul>
                             <li class="ready"><h5><i>&#xe001;</i>2011 MacBook Air or newer</h5></li>
                             <li class="ready"><h5><i>&#xe001;</i>2011 MacBook Pro or newer</h5></li>
@@ -278,14 +317,15 @@
                 </div>
             </section>
 
-            <section id="just-the-beginning" class="grey-background">
+            <section id="just-the-beginning" class="">
                 <div class="wrapper">
-                    <h1>Maybe not just for Mac. For everything.</h1>
-                    <div class="left half"><p>We'd like to live in a world without passwords. A world where your stuff just works if it's you, and doesn't work if it's someone else.</p>
-                        <p>We think Locket just might be a way to get there. Think of your Locket as the keycard to everything in your life, only it can’t be stolen. It works just for you. And it works with pretty much everything, from your computer to your bank account to your bike lock.</p>
+                    <h1>Maybe for more than just Mac.</h1>
+                    <div class="left half"><p>We'd like to live in a world without passwords. A world where your stuff just works when you try to use it, and doesn't work for anyone else.</p>
+                        <p>We think Locket just might be a way to get there. Think of your Locket as the keycard to everything in your life, only it can’t be stolen. And it works only for you.</p>
+                        <p>What would you like to see Locket support next? Vote and let us know.</p>
                     </div>
                     <div class="right half">
-                        <h4>What do you want your Locket to control next? <strong>Vote with a tweet.</strong></h4>
+                        <h4><strong>120</strong> votes so far</h4>
                         <ul id="vote">
                             <li id="vote-gmail"><a class="tweet" alt="Tweet to vote for Gmail" data-url="http://www.locketapp.com" data-text="Google accounts are a mess. Locket for Gmail, please. Gmail should just know if it's me." data-hashtags="locketforgmail"></a><span class="count">0</span>
 
@@ -306,16 +346,28 @@
 </div> -->
 </section>
 <footer>
-    <div class="wrapper">
-        <h1 class="logo">
-            <a href="/">Locket.</a>
-        </h1>
-        <nav class="footer-links">
-          <a href="/faq">FAQ</a> <a href="mailto:help@locketapp.com">Help</a> <a href="/press">Press</a> <a href="/legal">Legal</a> 
-      </nav>
+                            
+                               
+                                <nav class="footer-links">
+                                    <a href="/faq">FAQ</a> <a href="mailto:help@locketapp.com" >Help</a>  
+                                
+                                <a href="/press">press</a> <a href="/legal" >Legal</a> 
+                                </nav>
 
-  </div>  
-</footer>
+                                <nav class="">
+
+            
+
+            <a class="button download available outline">Download</a>
+            <form action="http://locket.us7.list-manage.com/subscribe/post?u=dd3055a8a4737ac6c53bff5b2&amp;id=14bc629373" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate popover" target="_blank" novalidate>
+                <input type="checkbox" value="1" name="group[325][1]" id="subscribe-to-android"><input type="checkbox" value="2" name="group[325][2]" id="subscribe-to-windows">
+                <input type="email" value="" name="EMAIL" class="email outline" id="mce-EMAIL" placeholder="email address" required>
+                <label id="label-for-os-notify"for="mce-EMAIL">Locket for Windows isn't ready yet. Be the first to know when it's here.</label>
+                <input type="submit" value="Notify me" name="subscribe" id="mc-embedded-subscribe" class="button ">
+            </form>
+            </nav> 
+                             
+                        </footer>
 
 
 <!--End mc_embed_signup-->

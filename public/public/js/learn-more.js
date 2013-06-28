@@ -1,5 +1,81 @@
 /////////////////////////////////////////////////////////
 //
+// Create video play trigger for iOS
+//
+/////////////////////////////////////////////////////////
+
+ if(navigator.userAgent.match(/(iPad)/i)) {
+    
+    playButton = $("#video-play-trigger, #above-the-fold h1")
+    video = $("#locket-video")
+    wrapper = $("#video-viewport")
+
+    video.get(0).pause();          // For iOS < 6.1, don't autoplay
+    
+    // Show the video
+    function openVideo() {
+          wrapper.css({               
+            'visibility' :'visible',
+            'z-index'    :'3'
+          });
+
+          $("h1.logo a").fadeOut();
+          $("h1.logo")
+            .append('<span id="logo-back-button">&#xe008;</span>')
+            .on("click", function() {
+                location.reload();  
+            })
+          ;
+
+          setTimeout(function() {
+            $("#logo-back-button").fadeIn();
+          }, 500);
+
+          playButton.fadeOut('fast');
+          
+          video.get(0).play().on("ended", function() {
+              closeVideo();
+          });
+    }
+
+    // Hide the video
+    function closeVideo() {
+          video.get(0).pause();
+
+          wrapper.css({
+            'visibility' :'hidden',
+            'z-index'    :'1'
+          });
+
+          $("#logo-back-button").fadeOut();
+          $("h1.logo a").fadeIn();
+          
+          playButton.fadeIn('fast');
+    }
+
+    playButton.on("click", function() {
+          openVideo();
+    });
+
+    $(window).bind('scroll', function(){
+          if($(document).scrollTop() >= 350) {
+              closeVideo();
+          }
+    });
+}
+
+if(navigator.userAgent.match(/(iPhone|iPod)/i)) {
+    
+    playButton = $("#video-play-trigger")
+    video = $("#locket-video")
+
+    playButton.on("click", function() {
+      video.get(0).play()   // Play the video
+    });
+
+}
+/////////////////////////////////////////////////////////
+//
 // Background-size: cover behavior for background video
 //
 /////////////////////////////////////////////////////////
@@ -53,103 +129,22 @@ function resizeToCover() {
       resizeDiv();
   });
 
-  window.onresize = function(event) {
-      resizeDiv();
+  if(navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+    // This code is shitty, but it works. Fixes mobile safari resize bug. 
+  }
+  
+  else {
+    window.onresize = function(event) {
+        resizeDiv();
+    }
   }
 
   function resizeDiv() {
-      vph = $(window).height(); 
+      vph = window.innerHeight ? window.innerHeight : $(window).height();
       $('#above-the-fold.playing').css({'height': vph});
       $('#what-is-locket').css({'margin-top': vph});
 
   }
-
-
-
-/////////////////////////////////////////////////////////
-//
-// Video cuepoints to sync page content changes
-//
-/////////////////////////////////////////////////////////
-
-(function() {
-    /* Cuepoint Coffee. A simple library for HTML5 Video Subtitles and Cuepoints */
-    
-    /**
-     * @class Utils 
-    */
-    
-    var Cuepoint, Utils, utils;
-    Utils = (function() {
-        function Utils() {}
-        Utils.prototype.log = function(args) {
-            this.args = args;
-            if (window.console) {
-                return console.log(Array.prototype.slice.call(this, arguments));
-            }
-        };
-        return Utils;
-    })();
-    
-    /**
-     * @class Cuepoint
-     */
-    
-    Cuepoint = (function() {
-        function Cuepoint() {
-            this.nativeKeys = Object.keys;
-        }
-        Cuepoint.prototype.init = function(slides) {
-            var key, value, _results;
-            this.slides = slides;
-            this.subtitles = document.getElementById("headline");
-            this.video = document.getElementById("video");
-            _results = [];
-            for (key in slides) {
-                value = slides[key];
-                this.addSlide(key, value);
-                _results.push(this.events.call);
-            }
-            return _results;
-        };
-        Cuepoint.prototype.events = function() {};
-        Cuepoint.prototype.currentTime = function() {
-            return this.video.currentTime;
-        };
-        Cuepoint.prototype.update = function(html) {
-            this.html = html;
-            return this.subtitles.innerHTML = this.html;
-        };
-        Cuepoint.prototype.setTime = function(time) {
-            this.time = time;
-            this.video.currentTime = time;
-            return this.video.play();
-        };
-        Cuepoint.prototype.addSlide = function(time, html) {
-            var self;
-            this.time = time;
-            this.html = html;
-            self = this;
-            return this.video.addEventListener("timeupdate", function() {
-                if (this.currentTime >= time && this.currentTime <= time + 0.3) {
-                    return self.update(html);
-                }
-            },
-            false);
-        };
-        Cuepoint.prototype.play = function() {
-            return this.video.play();
-        };
-        Cuepoint.prototype.pause = function() {
-            if (!this.video.paused) {
-                return this.video.pause();
-            }
-        };
-        return Cuepoint;
-    })();
-    utils = new Utils;
-    window.cuepoint = new Cuepoint;
-}).call(this);
 
 
 /////////////////////////////////////////////////////////
@@ -158,7 +153,7 @@ function resizeToCover() {
 //
 /////////////////////////////////////////////////////////
 
-$("#video").bind("ended", function() {
+$("#locket-video").bind("ended", function() {
    vph = $(window).height(); 
    $('#above-the-fold.playing, #video-viewport.playing').removeClass('playing')
    $('body').css({'overflow-y':'visible', 'overflow-x':'hidden'});
@@ -186,23 +181,60 @@ $(function() {
 /////////////////////////////////////////////////////////
 
    
+if(navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+    // This code is shitty, but it works. Fixes mobile safari resize bug. 
+  }
+  
+else {
+  $(window).bind('scroll', function(){
+      var offset      = $(document).scrollTop()
+      ,opacity        = 0
+      ;
+       var fadeStart  = 0 // 100px scroll or less will equiv to 1 opacity
+      ,fadeUntil      = jQuery(window).height() / 1.25
+      ,fading         = $('#video-viewport')
+  ;
+      if( offset<=fadeStart ){
+          opacity=1;
+      }else if( offset<=fadeUntil ){
+          opacity=1-offset/fadeUntil;
+      }
+      fading.css('opacity',opacity);
+  });
+}
 
-$(window).bind('scroll', function(){
+
+/////////////////////////////////////////////////////////
+//
+// Move header up when page is scrolled
+//
+/////////////////////////////////////////////////////////
+
+   
+
+$(window).on('scroll', function(){
     var offset      = $(document).scrollTop()
-    ,opacity        = 0
-    ;
-     var fadeStart  = 0 // 100px scroll or less will equiv to 1 opacity
-    ,fadeUntil      = jQuery(window).height() / 2
-    ,fading         = $('#video-viewport')
+    ,header         = $('header')
+    ,threshold      = 40
+    ,logo           = $('header h1.logo')
+    ,startDarkBG    = $('#above-the-fold').outerHeight() + $('#what-is-locket').outerHeight() - threshold 
+    ,endDarkBG      = startDarkBG + $('section#security').outerHeight()
 ;
-    if( offset<=fadeStart ){
-        opacity=1;
-    }else if( offset<=fadeUntil ){
-        opacity=1-offset/fadeUntil;
+    if(navigator.userAgent.match(/(iPhone|iPod)/i)) {
+        var threshold = 80 + $('#above-the-fold').height();
     }
-    fading.css('opacity',opacity);
-});
+    if( offset>=threshold && offset < startDarkBG || offset >= endDarkBG ){
+        header.addClass('scrolled');
+        logo.removeClass('light');
+    }else if (!navigator.userAgent.match(/(iPhone|iPod|iPad)/i) && offset>=startDarkBG && offset < endDarkBG) {
+        logo.addClass('light'); // Make the logo white when on top of the dark bg security section, but not on iOS
+    }else if( offset<threshold ){
+        header.removeClass('scrolled');
+        logo.addClass('light');
+    }
 
+    
+});
 
 
 /////////////////////////////////////////////////////////
@@ -238,3 +270,6 @@ $(".tweet").each(function() {
         elem.find(".count").html(data.count);
     });
 });
+
+
+// }

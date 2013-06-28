@@ -18,7 +18,39 @@ section {
 	text-align: center;
 	position: relative;
 	background-color: white;
-	z-index:3;
+	z-index:4;
+	
+}
+
+header {
+	padding: 2% 4%;
+}
+
+footer {
+	padding: 25px 4%;
+}
+
+header, footer {
+	
+	@include mobile { padding: 10px 1.5em; opacity: 0;  }
+	&.scrolled { 
+		padding: 0.75% 4%;
+		@include mobile { padding: 10px 1.5em; opacity: 1; }
+		.share { @include opacity(0);}
+
+		}
+}
+
+header h2 {
+	color: #fff;
+	margin-left: .5em;
+
+	@include transition(opacity, .3s);
+	&:before { display: none; }
+}
+
+header.scrolled h2 { 
+	@include opacity(0);
 }
 
 

@@ -1,8 +1,7 @@
 section#bluetooth-le {
 
-	padding-top: 0;
 
-	h1 { padding-top: 1em; margin-bottom: 2em; @include mobile { margin-bottom: 1em }}
+	h1 { margin-bottom: 2em; @include mobile { margin-bottom: 1em }}
 	
 	p { 
 		margin-bottom: 2em;
@@ -16,20 +15,22 @@ section#bluetooth-le {
 
 	h4 { 
 		text-align: left; 
-		font-size: .7em; 
+		font-size: .75em; 
 		font-weight: 500;
+		letter-spacing: 4px;
 	}
 
 	ul {
-		@include background-image-retina('../img/learn-more/supported-devices-bg','gif',95px,520px);
+		background: url('../img/learn-more/supported-devices-bg@2x.gif') -17px 0px no-repeat;
+		background-size: 115px 630px;
 		float: left;
-		width: 280px;
+		width: 80%;
 		list-style-type: none;
 		padding: 0;
 		margin: 0;
 		@include box-sizing(border-box);
-		@include tablet { width: 220px; background-size: 70px;}
-		@include mobile { width: 100%; margin-bottom: 4em }
+		@include tablet { width: 90%; background-size: 92px; }
+		@include mobile { width: 100%; margin-bottom: 4em;  }
 
 		li {
 			position: relative;
@@ -37,21 +38,21 @@ section#bluetooth-le {
 			text-align: left;
 			@include box-sizing(border-box);
 			border-top: 1px solid $color-1;
-			padding: 0 .5em 0 130px;
+			padding: 0 .5em 0 45%;
 			display: table;
 			width: 100%;
-			height: 80px;
-			@include tablet { height: 59px; padding-left: 99px;}
-			@include mobile { padding-left: 40%; }
+			height: 97px;
+			@include tablet { height: 80px; padding-left: 40%; }
+			@include mobile {  }
 			
 			i {
 				position: absolute;
 				top: 50%;
-				left: 5.5em;
+				left: 31.5%;
 				margin-top: -8px;
 				font-size: 18px;
 				color: #4ece91;
-				@include tablet { left: 4.8em; font-size: 15px;}
+				@include tablet { left: 27%; font-size: 16px;}
 				@include mobile { left: 6.8em; }
 			}
 
@@ -70,6 +71,7 @@ section#bluetooth-le {
 	}
 	div#iphone-screenshot {
 		position: relative;
+		@include mobile { margin-top: -2em; }
 
 		img { 
 			width: 100%;
@@ -92,8 +94,8 @@ section#bluetooth-le {
 			width: 4.5%;
 			height: 3.2%;
 			position: absolute;
-			top: 13.4%;
-			right: 24.7%;
+			top: 13.35%;
+			right: 24.8%;
 			z-index: 3;
 			transform: translateZ(0);
 			@include opacity(0);

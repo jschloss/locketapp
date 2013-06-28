@@ -2,38 +2,47 @@ section#just-the-beginning {
 
 	padding-bottom: 12em;
 
+	@include mobile { 
+		background: #f5f5f5;
+		padding-bottom: 6em;
+	};
+
 	.half { 
 		@include tablet { width: 100%; }
 	}
 
 	div.left.half { 
-		padding: 1.7em 5.5em 1em 0; 
-		@include tablet { padding: 1em 4em; margin-left: .5em; }; 
+		padding: 1.7em 4.2em 1em 0; 
+		@include tablet { padding: 1em 5em; margin-left: .5em; }; 
 		@include mobile { padding: 0 }
 	}
 
 
 	.right.half { 
 		position: relative; 
-		margin-top: 2.75em;
+		margin-top: 2.85em;
 		height: 400px;
 		@include tablet { width: 70%; margin-right: 15%;  }
-		@include mobile { width: 100%; margin: 0; height: 450px; }
+		@include mobile { width: 100%; margin: 0; height: 430px; margin-top: 3em; }
 
 	}
 	
-	
+	h1 {
+		@include mobile { padding: 0 1em; }
+
+	}
 	h4 { 
 		width: 35%;
 		position: absolute;
 		left: 50%;
-		top: 129px; @include tablet { top: 136px; }
+		top: 125px; @include tablet { top: 136px; }
 		margin-left: -18.2%;
 		strong {
 			font-family: georgia, serif;
-			font-style: italic;
+			font-size: 5em;
 			font-weight: 100;
-			border-bottom: 2px solid #131513;
+			letter-spacing: -1px;
+			display: block;
 		}
 	}
 	a { font-size: .75em; margin: 1em; }

@@ -1,17 +1,30 @@
 @import "lib/variables";
 @import "lib/media-queries";
 
+header.scrolled {
+	background: white; 
+}
+
 section.boilerplate {
-	padding-top: 0;
+	padding-top: 2em;
 
 	a { color: $color-2; }
 	h1 { 
-		border-top: 1px solid #ccc;
-		padding-top: 1em;
-		margin-top: 0;
+		font-size: 4em; 
+		margin-top: 2em;
+		@include mobile{ font-size: 2.5em }
+	}
+	h2 { 
+		border-top: 1px solid rgba(77,77,77,.2);
+		padding: 3em 0 2em;
+		margin: 0;
 		float: left;
+		font-size: 1.3em;
 		clear: both;
+		font-weight: 700;
 		width: 100%;
+		text-transform: uppercase;
+		letter-spacing: 5px;
 		&:first-child {
 			margin-top: 100px;
 			border-top: none;
@@ -29,8 +42,9 @@ section.boilerplate {
 			float: left; margin: 0; padding: 0 2em .5em 0;
 			box-sizing: border-box;
 
-			h2 { 
+			h3 { 
 				font-size: 1.2em;
+				font-weight: 500;
 			}
 
 			
@@ -48,6 +62,7 @@ section.boilerplate {
 
 
 #legal {
+	h1 { margin-bottom: 0 }
 	p { font-size: 1.2em; padding: 0 0 .5em 0; @include mobile { padding: 0 0 .5em }}
 	p.large { font-size: 1.35em; padding-right: 2%;  @include mobile { padding: 0 0 1em }}
 	p.footnote { font-size: .8em; }
@@ -57,7 +72,8 @@ section.boilerplate {
 	img { max-width: 50%;}
 	.logo-wrap, .img-wrap { padding: 4em; text-align: center; background: #f8f8f8; }
 	.logo-wrap.dark { background: #131513; color: rgba(255,255,255,.6) }
-	.logo-wrap img { width: 55px; }
+	.logo-wrap img { width: 100px; }
+	.whole img { max-width: 100%; }
 	#app-in-hand {
 		background: url('../../press/iphone-app-in-hand.jpg') center center no-repeat;
 		background-size:820px;
