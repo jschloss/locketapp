@@ -26,26 +26,26 @@
 
 
 @-webkit-keyframes spinning {
-  from { background: url('../img/searching.png') 0 0 no-repeat; }
-  to { @include rotate(-360deg);  background: url('../img/searching.png') 0 0 no-repeat; }
+  from { }
+  to { @include rotate(-360deg); }
 }
 
 @-moz-keyframes spinning {
-  from { background: url('../img/searching.png') 0 0 no-repeat; }
-  to { @include rotate(-360deg);  background: url('../img/searching.png') 0 0 no-repeat; }
+  from { background-image: url('../img/searching@2x.png')}
+  to { @include rotate(-360deg);  background-image: url('../img/searching@2x.png')}
 }
 
 @-ms-keyframes spinning {
-  from { background: url('../img/searching.png') 0 0 no-repeat; }
-  to { @include rotate(-360deg);  background: url('../img/searching.png') 0 0 no-repeat; }
+  from { background-image: url('../img/searching@2x.png')}
+  to { @include rotate(-360deg);  background-image: url('../img/searching@2x.png')}
 }
 
 @-o-keyframes spinning {
-  from { background: url('../img/searching.png') 0 0 no-repeat; }
-  to { @include rotate(-360deg);  background: url('../img/searching.png') 0 0 no-repeat; }
+  from { background-image: url('../img/searching@2x.png')}
+  to { @include rotate(-360deg);  background-image: url('../img/searching@2x.png')}
 }
 
 @keyframes spinning {
-  from { background: url('../img/searching.png') 0 0 no-repeat; }
-  to { @include rotate(-360deg);  background: url('../img/searching.png') 0 0 no-repeat; }
+  from { background-image: url('../img/searching@2x@2x.png'); }
+  to { @include rotate(-360deg);  background-image: url('../img/searching@2x.png')}
 }

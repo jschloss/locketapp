@@ -10,7 +10,7 @@ section.boilerplate {
 
 	a { color: $color-2; }
 	h1 { 
-		font-size: 4em; 
+		font-size: 3.5em; 
 		margin-top: 2em;
 		@include mobile{ font-size: 2.5em }
 	}
@@ -19,7 +19,7 @@ section.boilerplate {
 		padding: 3em 0 2em;
 		margin: 0;
 		float: left;
-		font-size: 1.3em;
+		font-size: 1.2em;
 		clear: both;
 		font-weight: 700;
 		width: 100%;
@@ -53,7 +53,7 @@ section.boilerplate {
 	}
 
 	p {
-		font-size: 1.05em;
+		font-size: 1.2em;
 		line-height: 2em;
 		float: left;
 	}
@@ -63,7 +63,7 @@ section.boilerplate {
 
 #legal {
 	h1 { margin-bottom: 0 }
-	p { font-size: 1.2em; padding: 0 0 .5em 0; @include mobile { padding: 0 0 .5em }}
+	p { padding: 0 0 .5em 0; @include mobile { padding: 0 0 .5em }}
 	p.large { font-size: 1.35em; padding-right: 2%;  @include mobile { padding: 0 0 1em }}
 	p.footnote { font-size: .8em; }
 }
@@ -72,7 +72,7 @@ section.boilerplate {
 	img { max-width: 50%;}
 	.logo-wrap, .img-wrap { padding: 4em; text-align: center; background: #f8f8f8; }
 	.logo-wrap.dark { background: #131513; color: rgba(255,255,255,.6) }
-	.logo-wrap img { width: 100px; }
+	.logo-wrap img { width: 46px; }
 	.whole img { max-width: 100%; }
 	#app-in-hand {
 		background: url('../../press/iphone-app-in-hand.jpg') center center no-repeat;

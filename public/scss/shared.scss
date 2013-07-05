@@ -176,7 +176,7 @@ i, .icon {
 .button.outline, input.button.outline {
 	background: none;
 	border-width: 2px;
-	border-color: transparentize(white,.2);
+	border-color: white;
 	color: white;
 
 	&:hover  {

@@ -7,11 +7,48 @@
 
 body { 
 	overflow: hidden;
+	background: white;
 
 	&.returning {
 		overflow-y: visible;
 	}
 }
+
+#loading-spinner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -23px;
+	width: 46px;
+	height: 46px;
+	display: none;
+	span {
+		display: block;
+		font-weight: 100;
+		font-size: 2em;
+		width: 46px;
+		height: 46px;
+		overflow: hidden;
+		@include border-radius(50px);
+		@include transition(all,.3s);
+		@include background-image-retina('../img/searching','png',46px,auto);
+		-webkit-animation: spinning .7s linear infinite;
+		-moz-animation: spinning .7s linear infinite;
+		-ms-animation: spinning .7s linear infinite;
+		-o-animation: spinning .7s linear infinite;
+		animation: spinning .7s linear infinite;
+	}
+
+	i {
+		color: #dedede;
+		position: absolute;
+		top: 15px;
+		left: 17px;
+		font-size: 14px;
+	}
+}
+ 
 
 section {
 	padding: 3em 0 7em;
@@ -47,6 +84,18 @@ header h2 {
 
 	@include transition(opacity, .3s);
 	&:before { display: none; }
+}
+
+header.faded {
+	h1, .outline {
+		@include opacity(.5);
+	}
+}
+
+header.faded:hover {
+	h1, .outline {
+		@include opacity(1);
+	}
 }
 
 header.scrolled h2 { 

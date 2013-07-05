@@ -30,7 +30,7 @@ section#bluetooth-le {
 		margin: 0;
 		@include box-sizing(border-box);
 		@include tablet { width: 90%; background-size: 92px; }
-		@include mobile { width: 100%; margin-bottom: 4em;  }
+		@include mobile { width: 100%; margin-bottom: 4em; background-size: 104px;  }
 
 		li {
 			position: relative;
@@ -43,7 +43,7 @@ section#bluetooth-le {
 			width: 100%;
 			height: 97px;
 			@include tablet { height: 80px; padding-left: 40%; }
-			@include mobile {  }
+			@include mobile {  height: 90px; font-size: 21px; }
 			
 			i {
 				position: absolute;
@@ -71,7 +71,7 @@ section#bluetooth-le {
 	}
 	div#iphone-screenshot {
 		position: relative;
-		@include mobile { margin-top: -2em; }
+		@include mobile { margin-top: -2em; height: 80px; }
 
 		img { 
 			width: 100%;
@@ -99,6 +99,12 @@ section#bluetooth-le {
 			z-index: 3;
 			transform: translateZ(0);
 			@include opacity(0);
+
+			@include mobile {
+				width: 20px;
+				height: 30px;
+				top: 78px;
+			}
 		}
 
 	

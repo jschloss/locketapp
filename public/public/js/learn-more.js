@@ -1,79 +1,143 @@
 /////////////////////////////////////////////////////////
 //
-// Create video play trigger for iOS
+// Fade in content when backgound video is loaded
+// and set cookie for returning users
 //
 /////////////////////////////////////////////////////////
 
- if(navigator.userAgent.match(/(iPad)/i)) {
-    
-    playButton = $("#video-play-trigger, #above-the-fold h1")
-    video = $("#locket-video")
-    wrapper = $("#video-viewport")
+var video = document.getElementById("locket-background-video");
+video.addEventListener("canplaythrough", function () {
+      $("#loaded-content")
+          .css({visibility:'visible'})
+          .animate({opacity:1},1000); 
+      setTimeout( function(){
+        $("#loading-spinner").remove();
+      }, 1100);
+      if ($.cookie('returning') == "yes") {
+        $('body').css('overflow-y','visible');
+      }else {
+        $.cookie('returning','yes', {expires: 30, path: '/'});
+      }
+}, false);
 
-    video.get(0).pause();          // For iOS < 6.1, don't autoplay
+
+
+/////////////////////////////////////////////////////////
+//
+// Change the hero content for returning users
+//
+/////////////////////////////////////////////////////////
+
+function returningUser() {
+      $("#above-the-fold .hero").addClass('watch-again')
+      $("#above-the-fold h1 strong").text('See it');
+      $("#above-the-fold h1 em").text('again');
+      $("#above-the-fold h2").text('Or scroll to learn more');
+}
+
+/////////////////////////////////////////////////////////
+//
+// Create video play trigger for iOS
+//
+/////////////////////////////////////////////////////////
+    playButton        = $("#video-play-trigger, #above-the-fold h1, #above-the-fold h2")
+    heroContent       = $("#above-the-fold div.hero")
+    backgroundVideo   = $("#locket-background-video")
+    playedVideo       = $("#locket-played-video")
+    wrapper           = $("#video-viewport")
+
+
+ if(!navigator.userAgent.match(/(iPod|iPhone)/i)) {
+
+    playedVideo.get(0).pause();          // For iOS < 6.1, don't autoplay
     
     // Show the video
     function openVideo() {
-          wrapper.css({               
-            'visibility' :'visible',
-            'z-index'    :'3'
-          });
-
-          $("h1.logo a").fadeOut();
-          $("h1.logo")
-            .append('<span id="logo-back-button">&#xe008;</span>')
-            .on("click", function() {
-                location.reload();  
-            })
-          ;
-
-          setTimeout(function() {
-            $("#logo-back-button").fadeIn();
-          }, 500);
-
-          playButton.fadeOut('fast');
           
-          video.get(0).play().on("ended", function() {
+          // iPad-specific behavior
+              if(navigator.userAgent.match(/(iPad)/i)) {
+                  wrapper.css({
+                'visibility':'visible'
+              , 'z-index'   :'3'
+              });
+
+              $("h1.logo a").fadeOut();
+              $("h1.logo")
+                .append('<span id="logo-back-button">&#xe008;</span>')
+                .on("click", function() {
+                    location.reload();
+                })
+              ;
+
+              setTimeout(function() {
+                $("#logo-back-button").fadeIn();
+              }, 500);
+          }
+
+          heroContent.addClass('hidden');
+      
+          playedVideo.fadeIn(350);
+          playedVideo.get(0).play();
+          playedVideo.on("ended", function() {
               closeVideo();
+              if(!navigator.userAgent.match(/(iPad)/i)) {
+                returningUser();
+              }
           });
+         
+          backgroundVideo.get(0).pause();
+          backgroundVideo.delay(350).fadeOut('fast');
     }
 
     // Hide the video
     function closeVideo() {
-          video.get(0).pause();
-
-          wrapper.css({
-            'visibility' :'hidden',
-            'z-index'    :'1'
+          heroContent.removeClass('hidden');
+          $('header').removeClass('faded');
+          
+          $('body').css({
+            'overflow-y':'visible'
+          , 'overflow-x':'hidden'
           });
 
-          $("#logo-back-button").fadeOut();
-          $("h1.logo a").fadeIn();
-          
-          playButton.fadeIn('fast');
+          backgroundVideo.show();
+          backgroundVideo.get(0).play();
+
+          playedVideo.get(0).pause();
+          playedVideo.fadeOut();
+
+          if(navigator.userAgent.match(/(iPad)/i)) {
+            $("#logo-back-button").fadeOut();
+            $("h1.logo a").fadeIn();
+            wrapper.css({
+            'visibility':'hidden'
+          , 'z-index'   :'1'
+          });
+          }
     }
 
-    playButton.on("click", function() {
+    $('#above-the-fold .hero').on("click", playButton, function() {
           openVideo();
     });
 
-    $(window).bind('scroll', function(){
-          if($(document).scrollTop() >= 350) {
+    $(window).on('scroll', function(){
+          if($(document).scrollTop() >= playedVideo.height() ) {
               closeVideo();
           }
     });
-}
 
-if(navigator.userAgent.match(/(iPhone|iPod)/i)) {
     
-    playButton = $("#video-play-trigger")
-    video = $("#locket-video")
 
-    playButton.on("click", function() {
-      video.get(0).play()   // Play the video
+} else {
+
+    // iPhone-specific behavior
+
+    $('#above-the-fold .hero').on("click", playButton, function() {
+      playedVideo.show().get(0).play()   // Play the video
     });
 
-}
+} 
+
+
 /////////////////////////////////////////////////////////
 //
 // Background-size: cover behavior for background video
@@ -129,11 +193,7 @@ function resizeToCover() {
       resizeDiv();
   });
 
-  if(navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-    // This code is shitty, but it works. Fixes mobile safari resize bug. 
-  }
-  
-  else {
+  if(!navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
     window.onresize = function(event) {
         resizeDiv();
     }
@@ -146,18 +206,6 @@ function resizeToCover() {
 
   }
 
-
-/////////////////////////////////////////////////////////
-//
-// Change the page when the video finishes
-//
-/////////////////////////////////////////////////////////
-
-$("#locket-video").bind("ended", function() {
-   vph = $(window).height(); 
-   $('#above-the-fold.playing, #video-viewport.playing').removeClass('playing')
-   $('body').css({'overflow-y':'visible', 'overflow-x':'hidden'});
-});
 
 
 /////////////////////////////////////////////////////////
@@ -181,17 +229,13 @@ $(function() {
 /////////////////////////////////////////////////////////
 
    
-if(navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-    // This code is shitty, but it works. Fixes mobile safari resize bug. 
-  }
-  
-else {
+if(!navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
   $(window).bind('scroll', function(){
       var offset      = $(document).scrollTop()
       ,opacity        = 0
       ;
        var fadeStart  = 0 // 100px scroll or less will equiv to 1 opacity
-      ,fadeUntil      = jQuery(window).height() / 1.25
+      ,fadeUntil      = jQuery(window).height() / 1.75
       ,fading         = $('#video-viewport')
   ;
       if( offset<=fadeStart ){
@@ -210,30 +254,26 @@ else {
 //
 /////////////////////////////////////////////////////////
 
-   
-
 $(window).on('scroll', function(){
     var offset      = $(document).scrollTop()
     ,header         = $('header')
-    ,threshold      = 40
+    ,threshold      = $('#above-the-fold').outerHeight()/2
     ,logo           = $('header h1.logo')
-    ,startDarkBG    = $('#above-the-fold').outerHeight() + $('#what-is-locket').outerHeight() - threshold 
+    ,startDarkBG    = $('#above-the-fold').outerHeight() + $('#what-is-locket').outerHeight() - 40 
     ,endDarkBG      = startDarkBG + $('section#security').outerHeight()
 ;
     if(navigator.userAgent.match(/(iPhone|iPod)/i)) {
         var threshold = 80 + $('#above-the-fold').height();
     }
     if( offset>=threshold && offset < startDarkBG || offset >= endDarkBG ){
-        header.addClass('scrolled');
+        header.addClass('scrolled').removeClass('faded');
         logo.removeClass('light');
     }else if (!navigator.userAgent.match(/(iPhone|iPod|iPad)/i) && offset>=startDarkBG && offset < endDarkBG) {
         logo.addClass('light'); // Make the logo white when on top of the dark bg security section, but not on iOS
-    }else if( offset<threshold ){
+    }else if( offset<40 ){
         header.removeClass('scrolled');
         logo.addClass('light');
     }
-
-    
 });
 
 

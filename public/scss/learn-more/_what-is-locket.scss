@@ -76,32 +76,20 @@ section#what-is-locket {
       @include opacity(0);
    }
 
-   #screen-on { @include opacity(0); @include transition(all, .5s); @include transition-delay(1.4s); }
+   #screen-on { @include opacity(0); @include transition(all, .5s); @include transition-delay(3.4s); }
 
 }
 
 section#what-is-locket.play {
 
 
-
-
-	#btle-wave {
-       
-		  -webkit-animation: wave .5s 1s ease-out 1 forwards;
-         -moz-animation: wave .5s 1s ease-out 1 forwards;
-          -ms-animation: wave .5s 1s ease-out 1 forwards;
-           -o-animation: wave .5s 1s ease-out 1 forwards;
-              animation: wave .5s 1s ease-out 1 forwards;
-		
-	}
-
   #btle-knock {
       
-      -webkit-animation: knock .7s 0s ease-out 2 forwards;
-         -moz-animation: knock .7s 0s ease-out 2 forwards;
-          -ms-animation: knock .7s 0s ease-out 2 forwards;
-           -o-animation: knock .7s 0s ease-out 2 forwards;
-              animation: knock .7s 0s ease-out 2 forwards;
+      -webkit-animation: knock .6s 2s ease-out 2 forwards;
+         -moz-animation: knock .6s 2s ease-out 2 forwards;
+          -ms-animation: knock .6s 2s ease-out 2 forwards;
+           -o-animation: knock .6s 2s ease-out 2 forwards;
+              animation: knock .6s 2s ease-out 2 forwards;
     
   }
 
@@ -151,61 +139,6 @@ section#what-is-locket.play {
 }
 
 @keyframes knock {
-   0% {
-      @include opacity(1);
-
-      
-   }  
-
-   100% {
-       font-size: 40px;
-       @include opacity(0);
-   }
-// Make the waves come out when we tap the iphone
-}
-
-@-webkit-keyframes wave {
-   0% {
-      @include opacity(1);
-
-      
-   }  
-
-   100% {
-       @include scale(2);
-       @include opacity(0);
-       margin-left: 0px;
-   }
-
-}
-
-@-moz-keyframes wave {
-   0% {
-      @include opacity(1);
-
-      
-   }  
-
-   100% {
-       font-size: 40px;
-       @include opacity(0);
-   }
-}
-
-@-o-keyframes wave {
-   0% {
-      @include opacity(1);
-
-      
-   }  
-
-   100% {
-       font-size: 40px;
-       @include opacity(0);
-   }
-}
-
-@keyframes wave {
    0% {
       @include opacity(1);
 

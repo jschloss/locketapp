@@ -21,7 +21,33 @@
     <header><div class="wrapper">
         <h1 class="logo">
             <a href="/">Locket for iPhone and Mac</a>
-        </h1>
+        </h1><nav class="">
+
+            <div class="button outline share">
+                Share
+                <div class="popover">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-text="Automatic sign-in for Mac" data-via="locketapp" data-count="vertical" data-related="locketapp">Tweet</a>
+                    <div class="fb-like" data-href="http://www.locketapp.com" data-send="false" data-layout="box_count" data-width="450" data-show-faces="false"></div>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                    <a href="https://news.ycombinator.com/submit" class="hn-button" data-title="Automatic sign in for Mac" data-url="www.locketapp.com" data-count="vertical">Vote on Hacker News</a>
+                    <script type="text/javascript">var HN=[];HN.factory=function(e){return function(){HN.push([e].concat(Array.prototype.slice.call(arguments,0)))};},HN.on=HN.factory("on"),HN.once=HN.factory("once"),HN.off=HN.factory("off"),HN.emit=HN.factory("emit"),HN.load=function(){var e="hn-button.js";if(document.getElementById(e))return;var t=document.createElement("script");t.id=e,t.src="//hn-button.herokuapp.com/hn-button.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)},HN.load();</script>
+                </div>
+            </div>
+
+            <a class="button download available">Download</a>
+            <form action="http://locket.us7.list-manage.com/subscribe/post?u=dd3055a8a4737ac6c53bff5b2&amp;id=14bc629373" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate popover subscribe-form" target="_blank" novalidate>
+                <input type="checkbox" value="1" name="group[325][1]" id="subscribe-to-android"><input type="checkbox" value="2" name="group[325][2]" id="subscribe-to-windows">
+                <input type="email" value="" name="EMAIL" class="email outline" id="mce-EMAIL" placeholder="email address" required>
+                <label id="label-for-os-notify"for="mce-EMAIL">Locket for Windows isn't ready yet. Be the first to know when it's here.</label>
+                <input type="submit" value="Notify me" name="subscribe" id="mc-embedded-subscribe" class="button ">
+            </form>
+            <div class="popover" id="thanks-for-downloading">
+                <h3>Thanks for downloading Locket.<br>We think you're going to love it.</h3>
+                <div id="thanks-animation-wrapper">
+                    <div id="thanks-mac"><i>&#xe001;</i></div>
+                    <div id="thanks-iphone"></div>
+                </div></div>
+            </nav>  
         </div>  
     </header> 
 
@@ -34,7 +60,7 @@
                 <ol>
                     <li>
                         <h3>How does Locket work?</h3>
-                        <p>Locket is a pair of free apps: one for your iPhone, and one for your Mac. The two apps talk to eachother via Bluetooth Low Energy to provide secure, automatic sign-in to your Mac.</p>
+                        <p>Locket is a pair of apps: one for your iPhone, and one for your Mac. The two apps talk to eachother via Bluetooth Low Energy to provide secure, automatic sign-in to your Mac.</p>
                         <p>When you approach your Mac, your iPhone uses Bluetooth Low Energy to tell your Mac that you're there. After a few security checks, your Mac tells your iPhone to vibrate.</p>
                         <p>When your iPhone vibrates, tap it twice with your hand. Locket will then automatically enter your password in a tenth of a second.</p>
                     </li>
