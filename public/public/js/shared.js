@@ -3,6 +3,17 @@ var appStoreURL     =   'http://itunes.apple.com/us/app/paper-by-fiftythree/id50
 
 /////////////////////////////////////////////////////////
 //
+// Basic email validation
+//
+/////////////////////////////////////////////////////////
+
+function validateEmail(email) { 
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+/////////////////////////////////////////////////////////
+//
 // Change the page for Windows
 //
 /////////////////////////////////////////////////////////
@@ -16,9 +27,32 @@ if (navigator.appVersion.indexOf("Win")!=-1) {
             $('nav form').fadeToggle(300);
             $('#mce-EMAIL').focus(); 
         });                       
-        $('nav').addClass("os-not-supported windows");      
-        $('#subscribe-to-windows').prop('checked', true);   //Check the Windows checkbox in Mailchimp form
+        $('nav').addClass("os-not-supported windows");   
+        $('#collect-email-submit').on('click', function (e) {
+         var CollectEmail = Parse.Object.extend("WindowsEmails");
+         var collectEmail = new CollectEmail();
+         var userEmail = $('input#mce-EMAIL').val();
+         var form = $('#mc-embedded-subscribe-form');
+
+              if (validateEmail(userEmail)) {
+                collectEmail.set("email", userEmail);
+                collectEmail.save();
+                form.children('fieldset').fadeOut('slow');
+                form.find('label').html('Awesome, thanks!<br>You\'ll be the first to know.')
+              } else {
+                form.children('fieldset').addClass('shake');
+                form.find('label').html("Aw, shucks.<br>Please enter a valid email address.")
+                setTimeout( function(){
+                    form.children('fieldset').removeClass('shake');
+                    form.find('input[type=email]').focus();
+                }, 1000)
+              }
+              return false;
+         
+         });   
     });
+    
+   
 }
 
 /////////////////////////////////////////////////////////
@@ -28,18 +62,39 @@ if (navigator.appVersion.indexOf("Win")!=-1) {
 /////////////////////////////////////////////////////////
 
 if (navigator.appVersion.indexOf("Android")!=-1) {
-    $(function () {   
-        downloadButton.removeClass("available"); 
+        $(function()  { 
+        downloadButton.removeClass("available").addClass('outline'); 
         downloadButton.on('click', function(e) {
+            $(this).toggleClass('active');
             e.preventDefault();
-            $('nav form').fadeToggle('fast');
-            $('#mce-EMAIL').focus();
-            $('nav a.download').toggleClass('outline'); 
-        });              
-        $('nav').addClass("os-not-supported android"); 
-        $('#label-for-os-notify').text("Locket for Android isn't ready yet. Be the first to know when it's here.")
-        $('#subscribe-to-android').prop('checked', true);   //Check the Android checkbox in Mailchimp form
-    });
+            $('nav form').fadeToggle(300);
+            $('nav form label').html("Locket for Android isn\'t ready yet.<br>Be the first to know when it's here.");
+            $('#mce-EMAIL').focus(); 
+        });                       
+        $('nav').addClass("os-not-supported android");   
+        $('#collect-email-submit').on('click', function (e) {
+         var CollectEmail = Parse.Object.extend("AndroidEmails");
+         var collectEmail = new CollectEmail();
+         var userEmail = $('input#mce-EMAIL').val();
+         var form = $('#mc-embedded-subscribe-form');
+
+              if (validateEmail(userEmail)) {
+                collectEmail.set("email", userEmail);
+                collectEmail.save();
+                form.children('fieldset').fadeOut('slow');
+                form.find('label').html("Awesome, thanks!<br>You\'ll be the first to know.")
+              } else {
+                form.children('fieldset').addClass('shake');
+                form.find('label').html("Aw, shucks.<br>Please enter a valid email address.")
+                setTimeout( function(){
+                    form.children('fieldset').removeClass('shake');
+                    form.find('input[type=email]').focus();
+                }, 1000)
+              }
+              return false;
+         });
+    });   
+    
 }
 
 /////////////////////////////////////////////////////////

@@ -305,11 +305,113 @@ $(".tweet").each(function() {
         target: "_blank"
     });
      
-    // Get count and set it as the inner HTML of .count
-    $.getJSON(API_URL + "?callback=?&url=" + url, function(data) {
-        elem.find(".count").html(data.count);
+});
+
+Parse.initialize("aGV3jgoaAKQHf7mtBA4dSzMgQVPLBLItyN3dm7up", "QvCI9dOzz9zszyWSm1nzlqGdARN7tWhxejabFn0C");
+
+// Simple syntax to create a new subclass of Parse.Object.
+var LocketVote = Parse.Object.extend("Vote");
+
+// Create a new instance of that class.
+var locketVote = new LocketVote();
+
+// Update the candidates counts on page load
+$(document).ready(function() {
+
+    var candidates = $('ul#vote li').map(function(x,y) {return $(y).attr('id')});
+     
+    //create a Parse query object
+    var query = new Parse.Query(LocketVote);
+     
+    //The query.get() method requires the objectId as its first argument. It returns the object with that id.
+    query.startsWith("candidate","vote");
+    query.find({
+      // Find the right database item for each respective candidate
+      success: function(results) {
+           var sum = 0;
+           for (var i = 0; i < results.length; i++) { 
+              var locketVote = results[i];
+              var voteCount = locketVote.get("votes");
+              sum += voteCount;
+              
+              var candidate = locketVote.get("candidate");
+              var candidateli = $('#'+candidate);
+              if (candidateli) {
+                var count = candidateli.children('span.count');
+                count.html(voteCount);        
+              }
+            }
+           
+            // Show the number of total votes
+            $('#votes-so-far strong').text(sum);
+           
+            //Adjust the progress bar
+            var voteCompletion = Math.round((sum/500*100) / 10) * 10;
+            $('#progress-bar span').css('width',voteCompletion+'%');
+
+            // Show the number of days left to vote
+            var end = new Date('2013 august 12');
+            var now = new Date();
+            var daysLeft = Math.round((end - now) / 86400000);
+
+            if ( daysLeft < 0 ) {
+              var daysLeft = 0;
+            }
+
+            $('#days-left strong').text(daysLeft);
+
+      },
+
+      error: function(error) {
+        // error is an instance of Parse.Error.
+        alert('beep boop');
+      }
+    });
+
+        
+});
+
+
+
+        
+
+// Update a candidate's count when it is clicked
+
+$('ul#vote li').on('click', function (e) {
+ 
+    //keep a reference to this
+    var candidate = $(this).attr('id');
+    var count = $(this).children('span.count');
+
+    //create a Parse query object
+    var query = new Parse.Query(LocketVote);
+ 
+    //The query.get() method requires the objectId as its first argument. It returns the object with that id.
+    query.equalTo("candidate", candidate);
+    query.find({
+      success: function(results) {
+           for (var i = 0; i < results.length; i++) { 
+              var object = results[i];
+              query.get(object.id, {
+              success: function(locketVote) {
+                locketVote.increment("votes");
+                locketVote.save();
+                var voteCount = locketVote.get("votes");
+                count.html(voteCount);
+                var sum = $('#just-the-beginning h4 strong');
+                sum.text(Number(sum.text()) + 1);
+              }
+});
+            }
+      }
     });
 });
+
+
+
+
+      
+
 
 
 // }

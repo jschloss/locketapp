@@ -45,7 +45,7 @@ h1.logo {
 	line-height: 35px;
 	overflow: hidden;
 	@include border-radius(50px);
-	@include transition(all,750ms);
+	@include transition(all,650ms);
 	@include background-image-retina('../img/logo-gradient-sprite','png',46px,auto);
 	@include mobile { @include scale(1.2); margin-top: .6em; }
 	
@@ -71,7 +71,7 @@ h1.logo {
 				text-align: center;
 				position: absolute;
 				color: #333;
-				@include transition(color,0s,0s);
+				@include transition(all,650ms);
 			}
 		}
 

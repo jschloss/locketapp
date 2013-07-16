@@ -76,7 +76,7 @@ section#what-is-locket {
       @include opacity(0);
    }
 
-   #screen-on { @include opacity(0); @include transition(all, .5s); @include transition-delay(3.4s); }
+   #screen-on { @include opacity(0); @include transition(all, .5s); @include transition-delay(2.4s); }
 
 }
 
@@ -85,11 +85,11 @@ section#what-is-locket.play {
 
   #btle-knock {
       
-      -webkit-animation: knock .6s 2s ease-out 2 forwards;
-         -moz-animation: knock .6s 2s ease-out 2 forwards;
-          -ms-animation: knock .6s 2s ease-out 2 forwards;
-           -o-animation: knock .6s 2s ease-out 2 forwards;
-              animation: knock .6s 2s ease-out 2 forwards;
+      -webkit-animation: knock .6s 1s ease-out 2 forwards;
+         -moz-animation: knock .6s 1s ease-out 2 forwards;
+          -ms-animation: knock .6s 1s ease-out 2 forwards;
+           -o-animation: knock .6s 1s ease-out 2 forwards;
+              animation: knock .6s 1s ease-out 2 forwards;
     
   }
 
