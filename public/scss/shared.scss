@@ -44,24 +44,11 @@ a, a:link, a:visited, a:active {
 // Grid & typography stuff
 /////////////////////////////////////////////////
 
-section {
-	width: 100%;
-	float: left;
-
-	&.dark-background {
-		background: #131513;
-		color: white; 
-	}
-
-	&.grey-background {
-		background: #f2f2f2;
-	}
-}
 
 .wrapper { // Defines the content grid width
 	max-width: 840px;
 	min-width: 360px;
-	padding: 0 4%;
+	padding: 0 100px;
 	height: 100%;
 	margin: 0 auto;
 	position: relative;
@@ -75,11 +62,13 @@ section {
 .quarter { width: 25%; @include box-sizing(border-box); @include mobile { width: 50%; }}
 .left { float: left;}
 .right { float: right;}
+.grey-background { background: #f2f2f2; }
 strong { font-weight: 500;}
 
 section {
+	width: 100%;
+	float: left;
 	padding: 2em 0 2em;
-
 
 	h1 {
 		font-size: 2.2em;
@@ -155,7 +144,6 @@ i, .icon {
 	&:hover  {
 		background: $color-3;
 		border-color: $color-3;
-		border-bottom-color: #daff99;
 		text-decoration: none;
 	}
 
@@ -216,7 +204,8 @@ i, .icon {
 /////////////////////////////////////////////////
 @mixin popover {
 	background: white;
-	box-shadow: 0px 38px 50px 0px rgba(0, 0, 0, .2), 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+	box-shadow:2px 2px 0px 0px rgba(0,0,0,0.2);
+	border-left: 1px solid #f5f5f5;
 	@include box-sizing(border-box);
 	@include border-radius(10px);
 	padding: 6.5em 2em 2em;
@@ -224,10 +213,10 @@ i, .icon {
 	z-index: 15;
 
 
-	&:before {
+	&:before, &:after {
 		position: absolute;
 		top: -19px;
-		right: 6.6em;
+		right: 6.2em;
 		@include inline-block;
 		font-size: 10px;
 		width: 0;
@@ -240,6 +229,11 @@ i, .icon {
 		border-bottom-style: solid;
 		border-bottom-color: white;
 		content: "";
+	}
+
+	&:before {
+		border-bottom-color: rgba(0,0,0,.2);
+		right: 5.9em;
 	}
 
 }

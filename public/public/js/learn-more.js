@@ -236,7 +236,7 @@ if(!navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
       ;
        var fadeStart  = 0 // 100px scroll or less will equiv to 1 opacity
       ,fadeUntil      = jQuery(window).height() / 1.75
-      ,fading         = $('#video-viewport')
+      ,fading         = $('#video-viewport, #above-the-fold')
   ;
       if( offset<=fadeStart ){
           opacity=1;
@@ -244,6 +244,11 @@ if(!navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
           opacity=1-offset/fadeUntil;
       }
       fading.css('opacity',opacity);
+      if ( opacity == 0 ) {
+        fading.css('display','none')
+      } else {
+        fading.css('display','block')
+      }
   });
 }
 
@@ -259,16 +264,18 @@ $(window).on('scroll', function(){
     ,header         = $('header')
     ,threshold      = $('#above-the-fold').outerHeight()/2
     ,logo           = $('header h1.logo')
-    ,startDarkBG    = $('#above-the-fold').outerHeight() + $('#what-is-locket').outerHeight() - 40 
-    ,endDarkBG      = startDarkBG + $('section#security').outerHeight()
+    ,startDarkBG1    = $('#above-the-fold').outerHeight() + $('#what-is-locket').outerHeight() - 40 
+    ,endDarkBG1      = startDarkBG1 + $('#in-your-pants').outerHeight()
+    ,startDarkBG2    = endDarkBG1 + $('#bluetooth-le').outerHeight()
+    ,endDarkBG2      = startDarkBG2 + $('#wifi-not-required').outerHeight()
 ;
     if(navigator.userAgent.match(/(iPhone|iPod)/i)) {
         var threshold = 80 + $('#above-the-fold').height();
     }
-    if( offset>=threshold && offset < startDarkBG || offset >= endDarkBG ){
+    if( offset>=threshold && offset < startDarkBG1 || offset >= endDarkBG1 && offset <= startDarkBG2 || offset >= endDarkBG2 ){
         header.addClass('scrolled').removeClass('faded');
         logo.removeClass('light');
-    }else if (!navigator.userAgent.match(/(iPhone|iPod|iPad)/i) && offset>=startDarkBG && offset < endDarkBG) {
+    }else if (!navigator.userAgent.match(/(iPhone|iPod|iPad)/i) && offset>=startDarkBG1 && offset < endDarkBG1 || !navigator.userAgent.match(/(iPhone|iPod|iPad)/i) && offset>=startDarkBG2 && offset < endDarkBG2) {
         logo.addClass('light'); // Make the logo white when on top of the dark bg security section, but not on iOS
     }else if( offset<40 ){
         header.removeClass('scrolled');
@@ -364,7 +371,7 @@ $(document).ready(function() {
 
       error: function(error) {
         // error is an instance of Parse.Error.
-        alert('beep boop');
+        
       }
     });
 

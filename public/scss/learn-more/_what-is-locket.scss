@@ -19,6 +19,7 @@ section#what-is-locket {
    background: -ms-linear-gradient(top,  rgba(255,255,255,0.7) 0%,rgba(255,255,255,1) 38%,rgba(255,255,255,1) 100%); /* IE10+ */
    background: linear-gradient(to bottom,  rgba(255,255,255,0.7) 0%,rgba(255,255,255,1) 38%,rgba(255,255,255,1) 100%); /* W3C */
    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+   cursor: url('../img/cursor.png'), auto;
    @include tablet { 
     margin-top: 0 !important; // override javascript inline styling on mobile
     padding-bottom: 5em;
@@ -26,15 +27,75 @@ section#what-is-locket {
     } 
 
   h1 { 
+    margin-bottom: 550px;
     @include mobile { padding: 0 1em; }
   }
 
-   p {
-      padding: 1em 6.5em;
+  h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .9em;
+    @include transition(all,.3s);
+    
+    i {
+      display: block;
+      vertical-align: baseline;
+      padding: 0;
+      font-size: 2.5em;
+      height: 40px;
+      width: 100%;
+      @include transition(all,.3s);
+      @include mobile { padding-bottom: 20px;  }
+      }
+  }
 
+   ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    li { position: relative; cursor: default;}
+
+
+
+    p {
+      padding: 0;
+      position: absolute;
+      left:0;
+      right:0;
+      top:24px;
+      display: block;
+      font-size: 1.1em;
+      line-height: 1.7em;
+      text-align: center;
+      @include opacity(0);
+      @include transition(opacity,.3s);
       @include tablet { padding: .75em 4.5em; }
       @include mobile { padding: 0; margin-top: 250px;  }
+    }
+
+    li:hover h3 {
+      color: white;
+      margin-bottom: -10px;
+      i {
+        color: #333;
+        margin-top: -33px;
+        margin-bottom: 43px;
+      }
+    }
+    li:hover p {
+      display: block;
+      top: 4px;
+      @include opacity(1);
+    }
+
+    li.encrypted-entry p {
+      padding: 0 1.4em;
+    }
    }
+
+   
 
    a { 
       color: white;
@@ -42,40 +103,54 @@ section#what-is-locket {
    }
 
 	svg {
-		float: left;
+    width: 880px;
+    height: 580px;
+    position: absolute;
+    left: -52px;
+    top: 14px;
+
 		@include transition(all, .2s, 1s);
       @include tablet { @include scale(.8);  }
       @include mobile { @include scale(.65); @include transform-origin(left,top); position: absolute; top: 10em; }
-
-		&#btle-computer { 
-         width: 436px;
-         height: 260px;
-         margin-left: 5.4em;
-         @include tablet { margin-left: 1.2em }
-         @include mobile { margin: 0; left: 10%; }
-      }
-
-    &#btle-wave {
-      width: 30px;
-      height: 240px;
-      margin: 0 0 0 20px;
-      @include opacity(0);
-    }  
-
-		&#btle-phone { 
-         float: right;
-         width: 84px;
-         height: 257px;
-         margin-right: 9.8em;
-         @include tablet { margin-right: 5.2em }
-         @include mobile { margin: 0; right: 10%; }
-      }
 	}
 
-   #btle-knock {
-      @include opacity(0);
+   #iphone {
+      position: absolute;
+      top: 105px;
+      height: 427px;
+      right: 92px;
+
    }
 
+   #mac-is-open {
+    @include opacity(0);
+   }
+
+   #knock-ring {
+      position: absolute;
+      top: 244px;
+      left: 371px;
+      width: 49px;
+      height: 49px;
+      @include single-transition(opacity,.3s,linear,4.8s);
+      -webkit-animation: spinning .9s 0s linear infinite;
+         -moz-animation: spinning .9s 0s linear infinite;
+          -ms-animation: spinning .9s 0s linear infinite;
+           -o-animation: spinning .9s 0s linear infinite;
+              animation: spinning .9s 0s linear infinite;
+   }
+   #knock-avatar {
+    position: absolute;
+    top: 244px;
+    left: 371px;
+    width: 45px;
+    height: 45px;
+    @include border-radius(45px);
+    border: 2px solid transparent;
+    @include transition-property(border,opacity);
+    @include transition-duration(.3s,.3s);
+    @include transition-delay(2s,4.8s);
+   }
    #screen-on { @include opacity(0); @include transition(all, .5s); @include transition-delay(2.4s); }
 
 }
@@ -83,30 +158,56 @@ section#what-is-locket {
 section#what-is-locket.play {
 
 
-  #btle-knock {
+  #knock-ring {
+    @include opacity(0);
+  }
+  #knock-avatar {
+    border-color: #2de497;
+    @include opacity(0);
+  }
+
+  #knock-ring-animation-1 {
       
-      -webkit-animation: knock .6s 1s ease-out 2 forwards;
-         -moz-animation: knock .6s 1s ease-out 2 forwards;
-          -ms-animation: knock .6s 1s ease-out 2 forwards;
-           -o-animation: knock .6s 1s ease-out 2 forwards;
-              animation: knock .6s 1s ease-out 2 forwards;
+      -webkit-animation: knock .6s 4s ease-out 1 forwards;
+         -moz-animation: knock .6s 1s ease-out 1 forwards;
+          -ms-animation: knock .6s 1s ease-out 1 forwards;
+           -o-animation: knock .6s 1s ease-out 1 forwards;
+              animation: knock .6s 1s ease-out 1 forwards;
     
   }
 
-   #screen-on { @include opacity(1) }
+  #knock-ring-animation-2 {
+      
+      -webkit-animation: knock .6s 4.3s ease-out 1 forwards;
+         -moz-animation: knock .6s 1s ease-out 1 forwards;
+          -ms-animation: knock .6s 1s ease-out 1 forwards;
+           -o-animation: knock .6s 1s ease-out 1 forwards;
+              animation: knock .6s 1s ease-out 1 forwards;
+    
+  }
+
+  #mac-is-open {
+    @include transition(opacity, .3s);
+    @include transition-delay(4.8s);
+    @include opacity(1);
+   }
+
 }
 
 // Knock on the phone
 
 @-webkit-keyframes knock {
    0% {
+      stroke: #2BB673;
+      font-size: 19px;
       @include opacity(1);
 
       
    }  
 
    100% {
-       font-size: 40px;
+       font-size: 38px;
+       stroke: #7eceec;
        @include opacity(0);
    }
 
@@ -150,3 +251,5 @@ section#what-is-locket.play {
        @include opacity(0);
    }
 }
+
+#test {-webkit-animation: spinning .9s 0s linear infinite;}

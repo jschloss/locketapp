@@ -36,15 +36,7 @@ section#security {
 		font-weight: 100;
 	}
 
-	i {
-			@include inline-block;
-			vertical-align: baseline;
-			padding: 0;
-			font-size: 2.5em;
-			height: 90px;
-			width: 100%;
-			@include mobile { padding-bottom: 20px;  }
-	}
+	
 
 
 	p { 

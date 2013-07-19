@@ -8,7 +8,7 @@
     top: 0;
     left: 0;
     overflow: hidden;	
-    z-index: 1; /* for accessing the video by click */
+    z-index: 5; /* for accessing the video by click */
     @include tablet { visibility: hidden; position: absolute; }
 
     video {
@@ -31,7 +31,7 @@ section#above-the-fold {
 	overflow: hidden;
 	color: white;
 	position: fixed;
-	z-index: 3;
+	z-index: 6;
 
 	@include tablet { 
 		position: relative; 

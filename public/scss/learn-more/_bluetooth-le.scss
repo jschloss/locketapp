@@ -1,5 +1,6 @@
 section#bluetooth-le {
 
+	border-top: 1px solid #eee;
 
 	h1 { margin-bottom: 2em; @include mobile { margin-bottom: 1em }}
 	
@@ -7,7 +8,7 @@ section#bluetooth-le {
 		margin-bottom: 2em;
 		@include box-sizing(border-box); 
 		padding-left: 0; 
-		padding-right: 5.2em; 
+		padding-right: 5em; 
 		margin-top: 0;
 		@include tablet{ padding-right: 2em; }
 		@include mobile { padding: 0 }
@@ -15,10 +16,9 @@ section#bluetooth-le {
 
 	h4 { 
 		text-align: left;
-		font-size: 0.85em;
-		font-weight: 500;
-		letter-spacing: 1px;
-		@include opacity(.9);
+		font-size: 0.9em;
+		font-weight: 300;
+		letter-spacing: 2px;
 	}
 
 	ul {
@@ -82,7 +82,7 @@ section#bluetooth-le {
 			text-indent: 3px;
 			text-transform: uppercase;
 			letter-spacing: 3px;
-			background: #f2f2f2;
+			background: #fff;
 			color: $color-1;
 		}
 	}
@@ -91,8 +91,14 @@ section#bluetooth-le {
 		@include mobile { margin-top: -2em; height: 80px; }
 
 		img { 
-			width: 100%;
+			width: 103%;
 
+			&#full-battery {
+				position: absolute;
+				left: 9.8%;
+				top: 15.5%;
+				width: 83%;
+			}
 			&#battery-zoom {
 				position: absolute;
 				top:5%;
@@ -111,7 +117,7 @@ section#bluetooth-le {
 			width: 4.5%;
 			height: 3.2%;
 			position: absolute;
-			top: 13.35%;
+			top: 13.25%;
 			right: 24.8%;
 			z-index: 3;
 			transform: translateZ(0);

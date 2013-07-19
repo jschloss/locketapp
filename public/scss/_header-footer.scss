@@ -126,14 +126,14 @@ nav {
 
 
 	.share .popover {
-		width: 255px;
+		width: 244px;
 		top: 40px;
 		right: 0;
-		padding: 1em 1.5em .75em;
+		padding: 1em 1.2em .75em;
 		display: none;
 
 		&:before, &:after {
-			right: 19.65em;
+			right: 18.65em;
 		}
 	}
 
@@ -181,17 +181,24 @@ nav {
 footer {
 	position: relative;
 	z-index: 3;
-	background: #131513;
 	float: left;
 	width: 100%;
 	padding-top: 25px;
 	padding-bottom: 25px;
+	border-top: 1px solid #eee;
 
 	
-	a.button {
+	a.button.outline {
 		margin-top: 1.5%;
-		@include opacity(0.5);
+		border-color: $color-2;
+		border-bottom-color: $color-3;
+		color: $color-2;
 		@include mobile { display: none; }
+		&:hover {
+			background-color: $color-3;
+			border-color: $color-3;
+			color: white;
+		}
 	}
 
 	nav { margin: 0; }
@@ -202,13 +209,14 @@ footer {
 
 		a {
 			margin: 0 30px 0 0;
-			color: rgba(255,255,255,.5);
+			color: #333;
 			float: left; 
 			padding: 10px 0;
+			font-weight: 500;
 			@include box-sizing(border-box);
 			@include inline-block;
 			&:hover {
-				color: white;
+				color: $color-2;
 			}
 		}
 		

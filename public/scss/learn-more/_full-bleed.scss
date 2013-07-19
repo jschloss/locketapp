@@ -1,0 +1,42 @@
+section.full-bleed {
+	height: 800px;
+	background: url('../../press/lifestyle-shot.jpg');
+	background-size: cover;
+	background-position: bottom left;
+	position: relative;
+
+	h2 {
+		color: white;
+		width: 12%;
+		min-width: 180px;
+		font-size: 1.3em;
+		line-height: 1.7em;
+		font-weight: 300;
+		text-align: left;
+		position: absolute;
+		left: 4%;
+		bottom: 7%;
+
+		i {
+			display: block;
+			font-size: 2em;
+			text-indent: -4px;
+			margin-bottom: .5em;
+		}
+	}
+}
+#in-your-pants {
+	h2 i {
+		font-size: 2.2em;
+		text-indent: -2px
+	}
+}
+#wifi-not-required {
+	background-image: url('../../press/wifi-not-required.jpg');
+	
+	h2 {
+		left: auto;
+		right: 4%;
+		width: 11%;
+	    }
+}

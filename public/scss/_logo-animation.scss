@@ -27,25 +27,25 @@
 
 @-webkit-keyframes spinning {
   from { }
-  to { @include rotate(-360deg); }
+  to { @include rotate(-360deg); -webkit-transform-origin: center center; }
 }
 
 @-moz-keyframes spinning {
-  from { background-image: url('../img/searching@2x.png')}
-  to { @include rotate(-360deg);  background-image: url('../img/searching@2x.png')}
+  from { }
+  to { @include rotate(-360deg);  }
 }
 
 @-ms-keyframes spinning {
-  from { background-image: url('../img/searching@2x.png')}
-  to { @include rotate(-360deg);  background-image: url('../img/searching@2x.png')}
+  from { }
+  to { @include rotate(-360deg);  }
 }
 
 @-o-keyframes spinning {
-  from { background-image: url('../img/searching@2x.png')}
-  to { @include rotate(-360deg);  background-image: url('../img/searching@2x.png')}
+  from { }
+  to { @include rotate(-360deg);  }
 }
 
 @keyframes spinning {
-  from { background-image: url('../img/searching@2x@2x.png'); }
-  to { @include rotate(-360deg);  background-image: url('../img/searching@2x.png')}
+  from { }
+  to { @include rotate(-360deg);  }
 }
